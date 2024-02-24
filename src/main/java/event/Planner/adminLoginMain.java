@@ -29,8 +29,17 @@ public class adminLoginMain {
 			return "NaN";
 	}
 	
-	public static void main(String args[]) {
-		
+	public static void setIDs() {
+		adminIDs.add("0001");
+		adminIDs.add("0010");
+		adminIDs.add("0011");
+		adminIDs.add("0100");
+		adminIDs.add("0101");
+		adminIDs.add("0110");
+		adminIDs.add("0111");
+	}
+	
+	public static void setNames() {
 		adminNames.add("Ali");
 		adminNames.add("Ahmad");
 		adminNames.add("Ruba");
@@ -38,16 +47,9 @@ public class adminLoginMain {
 		adminNames.add("Adel");
 		adminNames.add("Malak");
 		adminNames.add("Toqa");	
-		
-		adminIDs.add("0001");
-		adminIDs.add("0010");
-		adminIDs.add("0011");
-		adminIDs.add("0100");
-		adminIDs.add("0101");
-		adminIDs.add("0110");
-		adminIDs.add("0111");		
-		
-		
+	}
+	
+	public static void setPasswords() {
 		adminPasswords.add("admin1111");
 		adminPasswords.add("admin2222");
 		adminPasswords.add("admin3333");
@@ -55,8 +57,15 @@ public class adminLoginMain {
 		adminPasswords.add("admin5555");
 		adminPasswords.add("admin6666");
 		adminPasswords.add("admin7777");
+	}
+	
+	public static void main(String args[]) {
 		
 		Scanner scan = new Scanner(System.in);
+		
+		setIDs();
+		setPasswords();
+		setNames();
 		
 		System.out.print("Please enter your ID here: ");
 		
