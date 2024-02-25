@@ -1,18 +1,22 @@
+#First feature file:
 
+Feature: Admin login
+  Description: Administrator log in featue
+  Actor: Administrator
 
-Feature: admin login
-  I want to use this template for my feature file
-
-  Scenario: admin can log in
+  Scenario: Admin can log in
     Given that the admin is not logged in
-    And the password is not in "passwords" arrayList
-    Then admin is logged in
+    And the password is "Admin1"
+    Then the admin log in succeeds
+    And the admin is logged in
     
-  Scenario: admin has the wrong password
+  Scenario: Admin cannot log in
   Given that the admin is not logged in
-  And the password is "wrong password"
+  And the password is not "Admin1"
   Then the admin log in fails
   And the admin is not logged in
+  
+  
 
   #@tag2
   #Scenario Outline: Title of your scenario outline
