@@ -1,4 +1,4 @@
-
+#First feature file:
 
 Feature: admin login
   I want to use this template for my feature file
@@ -13,6 +13,8 @@ Feature: admin login
   And the password is "wrong password"
   Then the admin log in fails
   And the admin is not logged in
+  
+  
 
   #@tag2
   #Scenario Outline: Title of your scenario outline
