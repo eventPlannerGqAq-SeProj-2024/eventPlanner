@@ -1,5 +1,6 @@
-package event.Planner;
+package eventPlanner.Tests;
 
+import event.Planner.adminLoginMain;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
