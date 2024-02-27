@@ -13,6 +13,6 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 				 snippets = SnippetType.CAMELCASE,
 				 glue = {"eventPlanner.Tests"})
 
-public class adminLoginTest {
+public class AcceptanceTest {
 	
 }
