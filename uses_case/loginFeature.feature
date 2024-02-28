@@ -1,13 +1,13 @@
 #First feature file:
 Feature: Login
   Description: login feature
-  Actor: Administrator or user or planner
+  Actor: Administrator or user or provider
 
   #Admin:
   @Scenario1A
   Scenario: Admin can log in
     Given that the admin is not logged in
-    And admin enters correct user name "user name" or password "password"
+    And admin enters correct user name "user name" and password "password"
     Then the admin log in succeeds
     And the admin is logged in
 
@@ -19,7 +19,7 @@ Feature: Login
     And the admin is not logged in
 
   #User:
-  @Scenario2U
+  @Scenario1U
   Scenario: User can log in
     Given that the user is not logged in
     And the user enters correct "user name" and "password"
@@ -34,7 +34,7 @@ Feature: Login
     And the user is not logged in
 
   #Planner:
-  @Scenario2P
+  @Scenario1P
   Scenario: Planner can log in
     Given that the planner is not logged in
     And the planner enters correct "user name" and "password"

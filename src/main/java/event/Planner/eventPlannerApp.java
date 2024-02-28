@@ -8,7 +8,17 @@ public class eventPlannerApp {
 	public  ArrayList<String> adminUsernames = new ArrayList<String>();
 	public  ArrayList<String> adminPasswords = new ArrayList<String>();
 	
+	public  ArrayList<String> userNames = new ArrayList<String>();
+	public  ArrayList<String> userUsernames = new ArrayList<String>();
+	public  ArrayList<String> userPasswords = new ArrayList<String>();
+	
+	public  ArrayList<String> providerNames = new ArrayList<String>();
+	public  ArrayList<String> providerUsernames = new ArrayList<String>();
+	public  ArrayList<String> providerPasswords = new ArrayList<String>();
+	
 	public  boolean checkAdminPass(String username,String pass) {
+		
+		if(!(adminUsernames.contains(username) && adminPasswords.contains(pass)))return false;
 		
 		for(int i=0;i<adminPasswords.size();i++) {
 			if((adminUsernames.indexOf(username) == adminPasswords.indexOf(pass)) && pass.equals(adminPasswords.get(i)) ) {
