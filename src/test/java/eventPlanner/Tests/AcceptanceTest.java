@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "uses_case",
-				 plugin =  {"html:target/cucumber/wekipedia.html"},
+				 plugin =  {"html:target/cucumber/eventPlanner.html"},
 				 monochrome = true,
 				 snippets = SnippetType.CAMELCASE,
 				 glue = {"eventPlanner.Tests"})
