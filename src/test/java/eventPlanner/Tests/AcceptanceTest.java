@@ -11,7 +11,8 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 				 plugin =  {"html:target/cucumber/eventPlanner.html"},
 				 monochrome = true,
 				 snippets = SnippetType.CAMELCASE,
-				 glue = {"eventPlanner.Tests"})
+				 glue = {"eventPlanner.Tests"},
+				 tags = "@Scenario1A")//Use this to change what scenarios you want to test
 
 public class AcceptanceTest {
 	
