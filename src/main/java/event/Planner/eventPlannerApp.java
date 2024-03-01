@@ -1,8 +1,10 @@
 package event.Planner;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class eventPlannerApp {
+	private Scanner scan = new Scanner(System.in);
 	
 	public  ArrayList<String> adminNames = new ArrayList<String>();
 	public  ArrayList<String> adminUsernames = new ArrayList<String>();
@@ -15,6 +17,10 @@ public class eventPlannerApp {
 	public  ArrayList<String> providerNames = new ArrayList<String>();
 	public  ArrayList<String> providerUsernames = new ArrayList<String>();
 	public  ArrayList<String> providerPasswords = new ArrayList<String>();
+	
+	public  ArrayList<Admin> Admins = new ArrayList<Admin>();
+	public  ArrayList<User> Users = new ArrayList<User>();
+	public  ArrayList<Provider> Providers = new ArrayList<Provider>();
 	
 	public  boolean checkAdminPass(String username,String pass) {
 		

@@ -48,7 +48,7 @@ public class loginSteps {
 	@Given("admin enters correct user name {string} and password {string}")
 	public void adminEntersCorrectUserNameAndPassword(String username, String pass) {
 		// Write code here that turns the phrase above into concrete actions
-		
+				
 				//Test 1:
 				if(isLoggedA == false) {
 					assertTrue("wrong username or password",app.checkAdminPass(username,pass));
@@ -68,7 +68,15 @@ public class loginSteps {
 				
 				if(isLoggedA == false) {
 					assertTrue("wrong username or password",app.checkAdminPass(username,pass));
-				}		
+				}
+				
+				//Test 4:
+				username = scan.nextLine();
+				pass = scan.nextLine();
+				
+				if(isLoggedA == false) {
+					assertTrue("wrong username or password",app.checkAdminPass(username,pass));
+				}	
 				//throw new io.cucumber.java.PendingException();
 	}
 	@Then("the admin log in succeeds")
@@ -82,7 +90,7 @@ public class loginSteps {
 	@Then("the admin is logged in")
 	public void theAdminIsLoggedIn() {
 	    // Write code here that turns the phrase above into concrete actions
-		System.out.println("Go to admin menu");
+		System.out.println("Go to admin menu\n");
 		//throw new io.cucumber.java.PendingException();
 	}
 	
@@ -90,8 +98,11 @@ public class loginSteps {
 	@Given("admin enters wrong user name {string} or password {string}")
 	public void adminEntersWrongUserNameOrPassword(String username, String pass) {
 	    // Write code here that turns the phrase above into concrete actions
+		username = scan.nextLine();
+		pass = scan.nextLine();
+		
 		if(isLoggedA == false) {
-			assertFalse("Invalid username or password",!app.checkAdminPass(username,pass));
+			assertFalse("correct ceredentials entered",app.checkAdminPass(username,pass));
 		}
 	    //throw new io.cucumber.java.PendingException();
 	}
@@ -106,7 +117,7 @@ public class loginSteps {
 	@Then("the admin is not logged in")
 	public void theAdminIsNotLoggedIn() {
 	    // Write code here that turns the phrase above into concrete actions
-		System.out.println("Stay in login menu");
+		System.out.println("Stay in login menu\n");
 		//throw new io.cucumber.java.PendingException();
 	}
 	
@@ -124,7 +135,7 @@ public class loginSteps {
 	@Given("the user enters correct {string} and {string}")
 	public void theUserEntersCorrectAnd(String username, String pass) {
 	    // Write code here that turns the phrase above into concrete actions
-		//Test 1:
+				//Test 1:
 				if(isLoggedU == false) {
 					assertTrue("wrong username or password",app.checkAdminPass(username,pass));
 				}
@@ -144,6 +155,14 @@ public class loginSteps {
 				if(isLoggedU == false) {
 					assertTrue("wrong username or password",app.checkAdminPass(username,pass));
 				}		
+				
+				//Test 4:
+				username = scan.nextLine();
+				pass = scan.nextLine();
+				
+				if(isLoggedA == false) {
+					assertTrue("wrong username or password",app.checkAdminPass(username,pass));
+				}
 		//throw new io.cucumber.java.PendingException();
 	}
 	@Then("the user log in succeeds")
@@ -157,7 +176,7 @@ public class loginSteps {
 	@Then("the user is logged in")
 	public void theUserIsLoggedIn() {
 	    // Write code here that turns the phrase above into concrete actions
-		System.out.println("Go to user menu");
+		System.out.println("Go to user menu\n");
 		//throw new io.cucumber.java.PendingException();
 	}
 	
@@ -165,8 +184,11 @@ public class loginSteps {
 	@Given("user enters wrong {string} or {string}")
 	public void userEntersWrongOr(String username, String pass) {
 	    // Write code here that turns the phrase above into concrete actions
+		username = scan.nextLine();
+		pass = scan.nextLine();
+		
 		if(isLoggedU == false) {
-			assertFalse("Invalid username or password",!app.checkAdminPass(username,pass));
+			assertFalse("Correct ceredentails were entered",app.checkAdminPass(username,pass));
 		}
 		//throw new io.cucumber.java.PendingException();
 	}
@@ -181,7 +203,7 @@ public class loginSteps {
 	@Then("the user is not logged in")
 	public void theUserIsNotLoggedIn() {
 	    // Write code here that turns the phrase above into concrete actions
-		System.out.println("Stay in login menu");
+		System.out.println("Stay in login menu\n");
 		//throw new io.cucumber.java.PendingException();
 	}
 	
@@ -218,6 +240,14 @@ public class loginSteps {
 				if(isLoggedP == false) {
 					assertTrue("wrong username or password",app.checkAdminPass(username,pass));
 				}		
+				
+				//Test 4:
+				username = scan.nextLine();
+				pass = scan.nextLine();
+				
+				if(isLoggedA == false) {
+					assertTrue("wrong username or password",app.checkAdminPass(username,pass));
+				}
 		//throw new io.cucumber.java.PendingException();
 	}
 	@Then("the planner log in succeeds")
@@ -231,7 +261,7 @@ public class loginSteps {
 	@Then("the planner is logged in")
 	public void thePlannerIsLoggedIn() {
 	    // Write code here that turns the phrase above into concrete actions
-		System.out.println("Go to provider menu");
+		System.out.println("Go to provider menu\n");
 		//throw new io.cucumber.java.PendingException();
 	}
 	
@@ -239,8 +269,11 @@ public class loginSteps {
 	@Given("planner enters wrong {string} or {string}")
 	public void plannerEntersWrongOr(String username, String pass) {
 	    // Write code here that turns the phrase above into concrete actions
+		username = scan.nextLine();
+		pass = scan.nextLine();
+		
 		if(isLoggedP == false) {
-			assertFalse("Invalid username or password",!app.checkAdminPass(username,pass));
+			assertFalse("Correct ceredentials were entered",app.checkAdminPass(username,pass));
 		}
 		//throw new io.cucumber.java.PendingException();
 	}
@@ -255,7 +288,7 @@ public class loginSteps {
 	@Then("the planner is not logged in")
 	public void thePlannerIsNotLoggedIn() {
 	    // Write code here that turns the phrase above into concrete actions
-		System.out.println("Stay in login menu");
+		System.out.println("Stay in login menu\n");
 	   //throw new io.cucumber.java.PendingException();
 	}
 
