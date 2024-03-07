@@ -20,11 +20,8 @@ public class loginSteps {
 	Scanner scan;
 	public loginSteps() {
 		
-		app = new eventPlannerApp();
+		app = eventPlannerApp.createApp();
 		
-		//app.setNames();
-		//app.setPasswords();
-		//app.setUsernames();
 		app.setLists();
 		
 		scan = new Scanner(System.in);

@@ -10,6 +10,13 @@ public class eventPlannerApp {
 	public  ArrayList<User> Users = new ArrayList<User>();
 	public  ArrayList<Provider> Providers = new ArrayList<Provider>();
 	
+	public static eventPlannerApp app;
+	
+	public static eventPlannerApp createApp() {
+		if(app == null)app = new eventPlannerApp();
+		return app;
+	}
+	
 	public int getMaxSize() {
 		int size = Users.size();
 		if(Users.size() > Admins.size() && Users.size() > Providers.size())return Users.size();
