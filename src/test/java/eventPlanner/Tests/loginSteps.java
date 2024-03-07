@@ -22,9 +22,10 @@ public class loginSteps {
 		
 		app = new eventPlannerApp();
 		
-		app.setNames();
-		app.setPasswords();
-		app.setUsernames();
+		//app.setNames();
+		//app.setPasswords();
+		//app.setUsernames();
+		app.setLists();
 		
 		scan = new Scanner(System.in);
 		
@@ -51,23 +52,23 @@ public class loginSteps {
 				
 				//Test 1:
 				if(isLoggedA == false) {
-					assertTrue("wrong username or password",app.checkAdminPass(username,pass));
+					assertTrue("wrong username or password",app.checkPass(username,pass));
 				}
 				
 				//Test 2:
-				username = "0001";
-				pass = "admin1111";
+				username = "1A";
+				pass = "admin1";
 				
 				if(isLoggedA == false) {
-					assertTrue("wrong username or password",app.checkAdminPass(username,pass));
+					assertTrue("wrong username or password",app.checkPass(username,pass));
 				}
 				
 				//Test 3:
-				username = "0100";
-				pass = "admin4444";
+				username = "2A";
+				pass = "admin2";
 				
 				if(isLoggedA == false) {
-					assertTrue("wrong username or password",app.checkAdminPass(username,pass));
+					assertTrue("wrong username or password",app.checkPass(username,pass));
 				}
 				
 				//Test 4:
@@ -75,7 +76,7 @@ public class loginSteps {
 				pass = scan.nextLine();
 				
 				if(isLoggedA == false) {
-					assertTrue("wrong username or password",app.checkAdminPass(username,pass));
+					assertTrue("wrong username or password",app.checkPass(username,pass));
 				}	
 				//throw new io.cucumber.java.PendingException();
 	}
@@ -102,7 +103,7 @@ public class loginSteps {
 		pass = scan.nextLine();
 		
 		if(isLoggedA == false) {
-			assertFalse("correct ceredentials entered",app.checkAdminPass(username,pass));
+			assertFalse("correct ceredentials entered",app.checkPass(username,pass));
 		}
 	    //throw new io.cucumber.java.PendingException();
 	}
@@ -137,23 +138,23 @@ public class loginSteps {
 	    // Write code here that turns the phrase above into concrete actions
 				//Test 1:
 				if(isLoggedU == false) {
-					assertTrue("wrong username or password",app.checkAdminPass(username,pass));
+					assertTrue("wrong username or password",app.checkPass(username,pass));
 				}
 				
 				//Test 2:
-				username = "0001";
-				pass = "admin1111";
+				username = "1U";
+				pass = "user1";
 				
 				if(isLoggedU == false) {
-					assertTrue("wrong username or password",app.checkAdminPass(username,pass));
+					assertTrue("wrong username or password",app.checkPass(username,pass));
 				}
 				
 				//Test 3:
-				username = "0100";
-				pass = "admin4444";
+				username = "2U";
+				pass = "user2";
 				
 				if(isLoggedU == false) {
-					assertTrue("wrong username or password",app.checkAdminPass(username,pass));
+					assertTrue("wrong username or password",app.checkPass(username,pass));
 				}		
 				
 				//Test 4:
@@ -161,7 +162,7 @@ public class loginSteps {
 				pass = scan.nextLine();
 				
 				if(isLoggedA == false) {
-					assertTrue("wrong username or password",app.checkAdminPass(username,pass));
+					assertTrue("wrong username or password",app.checkPass(username,pass));
 				}
 		//throw new io.cucumber.java.PendingException();
 	}
@@ -188,7 +189,7 @@ public class loginSteps {
 		pass = scan.nextLine();
 		
 		if(isLoggedU == false) {
-			assertFalse("Correct ceredentails were entered",app.checkAdminPass(username,pass));
+			assertFalse("Correct ceredentails were entered",app.checkPass(username,pass));
 		}
 		//throw new io.cucumber.java.PendingException();
 	}
@@ -222,23 +223,23 @@ public class loginSteps {
 	    // Write code here that turns the phrase above into concrete actions
 		//Test 1:
 				if(isLoggedP == false) {
-					assertTrue("wrong username or password",app.checkAdminPass(username,pass));
+					assertTrue("wrong username or password",app.checkPass(username,pass));
 				}
 				
 				//Test 2:
-				username = "0001";
-				pass = "admin1111";
+				username = "1P";
+				pass = "provider1";
 				
 				if(isLoggedP == false) {
-					assertTrue("wrong username or password",app.checkAdminPass(username,pass));
+					assertTrue("wrong username or password",app.checkPass(username,pass));
 				}
 				
 				//Test 3:
-				username = "0100";
-				pass = "admin4444";
+				username = "3P";
+				pass = "provider3";
 				
 				if(isLoggedP == false) {
-					assertTrue("wrong username or password",app.checkAdminPass(username,pass));
+					assertTrue("wrong username or password",app.checkPass(username,pass));
 				}		
 				
 				//Test 4:
@@ -246,7 +247,7 @@ public class loginSteps {
 				pass = scan.nextLine();
 				
 				if(isLoggedA == false) {
-					assertTrue("wrong username or password",app.checkAdminPass(username,pass));
+					assertTrue("wrong username or password",app.checkPass(username,pass));
 				}
 		//throw new io.cucumber.java.PendingException();
 	}
@@ -273,7 +274,7 @@ public class loginSteps {
 		pass = scan.nextLine();
 		
 		if(isLoggedP == false) {
-			assertFalse("Correct ceredentials were entered",app.checkAdminPass(username,pass));
+			assertFalse("Correct ceredentials were entered",app.checkPass(username,pass));
 		}
 		//throw new io.cucumber.java.PendingException();
 	}

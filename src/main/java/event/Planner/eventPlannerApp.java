@@ -6,65 +6,61 @@ import java.util.Scanner;
 public class eventPlannerApp {
 	private Scanner scan = new Scanner(System.in);
 	
-	public  ArrayList<String> adminNames = new ArrayList<String>();
-	public  ArrayList<String> adminUsernames = new ArrayList<String>();
-	public  ArrayList<String> adminPasswords = new ArrayList<String>();
-	
-	public  ArrayList<String> userNames = new ArrayList<String>();
-	public  ArrayList<String> userUsernames = new ArrayList<String>();
-	public  ArrayList<String> userPasswords = new ArrayList<String>();
-	
-	public  ArrayList<String> providerNames = new ArrayList<String>();
-	public  ArrayList<String> providerUsernames = new ArrayList<String>();
-	public  ArrayList<String> providerPasswords = new ArrayList<String>();
-	
 	public  ArrayList<Admin> Admins = new ArrayList<Admin>();
 	public  ArrayList<User> Users = new ArrayList<User>();
 	public  ArrayList<Provider> Providers = new ArrayList<Provider>();
 	
-	public  boolean checkAdminPass(String username,String pass) {
+	public int getMaxSize() {
+		int size = Users.size();
+		if(Users.size() > Admins.size() && Users.size() > Providers.size())return Users.size();
+		else if(Admins.size() > Users.size() && Admins.size() > Providers.size())return Admins.size();
+		else if(Providers.size() > Admins.size() && Providers.size() > Admins.size())return Providers.size();
+		return size;
+	}
+	
+	public void setLists() {
+		for(int i=0;i<4;i++) {
+			Admins.add(new Admin());
+			Users.add(new User());
+			Providers.add(new Provider());
+		}
 		
-		if(!(adminUsernames.contains(username) && adminPasswords.contains(pass)))return false;
+		Admins.get(0).setUsername("1A");
+		Admins.get(1).setUsername("2A");
+		Admins.get(2).setUsername("3A");
+		Admins.get(3).setUsername("user name");
 		
-		for(int i=0;i<adminPasswords.size();i++) {
-			if((adminUsernames.indexOf(username) == adminPasswords.indexOf(pass)) && pass.equals(adminPasswords.get(i)) ) {
-				return true;
-			}
+		Users.get(0).setUsername("1U");
+		Users.get(1).setUsername("2U");
+		Users.get(2).setUsername("3U");
+		
+		Providers.get(0).setUsername("1P");
+		Providers.get(1).setUsername("2P");
+		Providers.get(2).setUsername("3P");
+		
+		Admins.get(0).setPassword("admin1");
+		Admins.get(1).setPassword("admin2");
+		Admins.get(2).setPassword("admin3");
+		Admins.get(3).setPassword("password");
+		
+		Users.get(0).setPassword("user1");
+		Users.get(1).setPassword("user2");
+		Users.get(2).setPassword("user3");
+		
+		Providers.get(0).setPassword("provider1");
+		Providers.get(1).setPassword("provider2");
+		Providers.get(2).setPassword("provider3");
+		
+	}
+	
+	public boolean checkPass(String username,String pass) {
+		
+		for(int i=0;i<getMaxSize();i++) {
+			if(Admins.get(i).getUsername().equals(username) && Admins.get(i).getPass().equals(pass))return true;
+			else if(Users.get(i).getUsername().equals(username) && Users.get(i).getPass().equals(pass))return true;
+			else if(Providers.get(i).getUsername().equals(username) && Providers.get(i).getPass().equals(pass))return true;
 		}
 		return false;
 	}
-	
-	public void setUsernames() {
-		adminUsernames.add("0001");
-		adminUsernames.add("0010");
-		adminUsernames.add("0011");
-		adminUsernames.add("0100");
-		adminUsernames.add("0101");
-		adminUsernames.add("0110");
-		adminUsernames.add("user name");
-	}
-	
-	public void setNames() {
-		adminNames.add("Ali");
-		adminNames.add("Ahmad");
-		adminNames.add("Ruba");
-		adminNames.add("Ghassan");
-		adminNames.add("Adel");
-		adminNames.add("Malak");
-		adminNames.add("Toqa");	
-	}
-	
-	public void setPasswords() {
-		adminPasswords.add("admin1111");
-		adminPasswords.add("admin2222");
-		adminPasswords.add("admin3333");
-		adminPasswords.add("admin4444");
-		adminPasswords.add("admin5555");
-		adminPasswords.add("admin6666");
-		adminPasswords.add("password");
-	}
-	
-	
-	
 	
 }
