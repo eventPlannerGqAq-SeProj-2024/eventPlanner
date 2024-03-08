@@ -8,10 +8,11 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "uses_case",
-				 plugin =  {"html:target/cucumber/wekipedia.html"},
+				 plugin =  {"html:target/cucumber/eventPlanner.html"},
 				 monochrome = true,
 				 snippets = SnippetType.CAMELCASE,
-				 glue = {"eventPlanner.Tests"})
+				 glue = {"eventPlanner.Tests"},
+				 tags = "")//Use this to change what scenarios you want to test, make the string empty to test all scenarios
 
 public class AcceptanceTest {
 	

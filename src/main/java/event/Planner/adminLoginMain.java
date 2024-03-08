@@ -86,6 +86,7 @@ public class adminLoginMain {
 			pass = scan.nextLine();
 		}
 		
+		scan.close();
 		System.out.println("\nWelcome home " + getName(ID));
 		
 	}
