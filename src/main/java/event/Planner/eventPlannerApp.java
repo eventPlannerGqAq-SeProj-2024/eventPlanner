@@ -63,9 +63,18 @@ public class eventPlannerApp {
 	public boolean checkPass(String username,String pass) {
 		
 		for(int i=0;i<getMaxSize();i++) {
-			if(Admins.get(i).getUsername().equals(username) && Admins.get(i).getPass().equals(pass))return true;
-			else if(Users.get(i).getUsername().equals(username) && Users.get(i).getPass().equals(pass))return true;
-			else if(Providers.get(i).getUsername().equals(username) && Providers.get(i).getPass().equals(pass))return true;
+			if(Admins.get(i).getUsername().equals(username) && Admins.get(i).getPass().equals(pass)) {
+				Admins.get(i).setLogged(true);
+				return true;
+			}
+			else if(Users.get(i).getUsername().equals(username) && Users.get(i).getPass().equals(pass)) {
+				Users.get(i).setLogged(true);
+				return true;
+			}
+			else if(Providers.get(i).getUsername().equals(username) && Providers.get(i).getPass().equals(pass)) {
+				Providers.get(i).setLogged(true);
+				return true;
+			}
 		}
 		return false;
 	}

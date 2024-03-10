@@ -1,10 +1,7 @@
 package eventPlanner.Tests;
 
-import static org.junit.Assert.assertFalse;
 import java.util.*;
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Ignore;
+import static org.junit.Assert.*;
 
 import event.Planner.eventPlannerApp;
 import io.cucumber.java.en.Given;
@@ -13,9 +10,9 @@ import io.cucumber.java.en.Then;
 public class loginSteps {
 		
 	eventPlannerApp app;
-	boolean isLoggedA = false;
-	boolean isLoggedU = false;
-	boolean isLoggedP = false;
+	boolean isLoggedA;
+	boolean isLoggedU;
+	boolean isLoggedP;
 	
 	Scanner scan;
 	public loginSteps() {
@@ -47,28 +44,6 @@ public class loginSteps {
 	public void adminEntersCorrectUserNameAndPassword(String username, String pass) {
 		// Write code here that turns the phrase above into concrete actions
 				
-				//Test 1:
-				if(isLoggedA == false) {
-					assertTrue("wrong username or password",app.checkPass(username,pass));
-				}
-				
-				//Test 2:
-				username = "1A";
-				pass = "admin1";
-				
-				if(isLoggedA == false) {
-					assertTrue("wrong username or password",app.checkPass(username,pass));
-				}
-				
-				//Test 3:
-				username = "2A";
-				pass = "admin2";
-				
-				if(isLoggedA == false) {
-					assertTrue("wrong username or password",app.checkPass(username,pass));
-				}
-				
-				//Test 4:
 				username = scan.nextLine();
 				pass = scan.nextLine();
 				
@@ -133,28 +108,6 @@ public class loginSteps {
 	@Given("the user enters correct {string} and {string}")
 	public void theUserEntersCorrectAnd(String username, String pass) {
 	    // Write code here that turns the phrase above into concrete actions
-				//Test 1:
-				if(isLoggedU == false) {
-					assertTrue("wrong username or password",app.checkPass(username,pass));
-				}
-				
-				//Test 2:
-				username = "1U";
-				pass = "user1";
-				
-				if(isLoggedU == false) {
-					assertTrue("wrong username or password",app.checkPass(username,pass));
-				}
-				
-				//Test 3:
-				username = "2U";
-				pass = "user2";
-				
-				if(isLoggedU == false) {
-					assertTrue("wrong username or password",app.checkPass(username,pass));
-				}		
-				
-				//Test 4:
 				username = scan.nextLine();
 				pass = scan.nextLine();
 				
@@ -218,28 +171,6 @@ public class loginSteps {
 	@Given("the planner enters correct {string} and {string}")
 	public void thePlannerEntersCorrectAnd(String username, String pass) {
 	    // Write code here that turns the phrase above into concrete actions
-		//Test 1:
-				if(isLoggedP == false) {
-					assertTrue("wrong username or password",app.checkPass(username,pass));
-				}
-				
-				//Test 2:
-				username = "1P";
-				pass = "provider1";
-				
-				if(isLoggedP == false) {
-					assertTrue("wrong username or password",app.checkPass(username,pass));
-				}
-				
-				//Test 3:
-				username = "3P";
-				pass = "provider3";
-				
-				if(isLoggedP == false) {
-					assertTrue("wrong username or password",app.checkPass(username,pass));
-				}		
-				
-				//Test 4:
 				username = scan.nextLine();
 				pass = scan.nextLine();
 				

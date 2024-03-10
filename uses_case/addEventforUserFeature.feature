@@ -3,7 +3,6 @@ Feature: Adding a new event for a specific user
   Description: User wants to add a new event
   Actor: User
 
-  @tag1
   Scenario: Adding an event
     Given User is logged in
     And User selected add a new event option 
