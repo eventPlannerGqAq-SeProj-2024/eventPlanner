@@ -7,15 +7,28 @@ public class User {
 	private String bday;
 	private String email;
 	private char gender;
+	private boolean isLogged;
+	
 	
 	public User() {
 		username = "temp";
 		password = "temp";
 		name = "temp";
 		email = "temp@temp.com";
-		bday = "tt/tt/tt";
+		bday = "dd/mm/yy";
 		gender = 'x';
+		isLogged = false;
 		
+	}
+	
+	public User(String u,String p,String n, String e, String b, char g,boolean l) {
+		username = u;
+		password = p;
+		name = n;
+		email = e;
+		bday = b;
+		gender = 'g';
+		isLogged = l;
 	}
 	
 	public void setName(String n) {
@@ -42,6 +55,10 @@ public class User {
 		gender = g;
 	}
 	
+	public void setLogged(boolean l) {
+		isLogged = l;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -65,5 +82,9 @@ public class User {
 	public char getGender() {
 		return gender;
 	}	
+	
+	public boolean isLogged() {
+		return isLogged;
+	}
 	
 }
