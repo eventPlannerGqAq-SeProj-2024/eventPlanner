@@ -17,7 +17,7 @@ public class eventPlannerApp {
 		return app;
 	}
 	
-	public int getMaxSize() {
+	public int getMaxSizeList() {
 		int size = Users.size();
 		if(Users.size() > Admins.size() && Users.size() > Providers.size())return Users.size();
 		else if(Admins.size() > Users.size() && Admins.size() > Providers.size())return Admins.size();
@@ -62,7 +62,7 @@ public class eventPlannerApp {
 	
 	public boolean checkPass(String username,String pass) {
 		
-		for(int i=0;i<getMaxSize();i++) {
+		for(int i=0;i<getMaxSizeList();i++) {
 			if(Admins.get(i).getUsername().equals(username) && Admins.get(i).getPass().equals(pass)) {
 				Admins.get(i).setLogged(true);
 				return true;

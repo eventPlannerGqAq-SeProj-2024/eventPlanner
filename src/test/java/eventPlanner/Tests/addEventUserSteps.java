@@ -1,24 +1,30 @@
 package eventPlanner.Tests;
 
 import event.Planner.eventPlannerApp;
+import static org.junit.Assert.*;
+import org.junit.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class addEventUserSteps {
 	eventPlannerApp app;
+	public boolean isLoggedU;
 	
 	public addEventUserSteps() {
 		app = eventPlannerApp.createApp();
+		isLoggedU = false;
 	}
-	
 	@Given("User is logged in")
 	public void userIsLoggedIn() {
 	    // Write code here that turns the phrase above into concrete actions
+		isLoggedU = true;
+		assertTrue("User is not logged in",isLoggedU);
 		//throw new io.cucumber.java.PendingException();
 	}
 	@Given("User selected add a new event option")
 	public void userSelectedAddANewEventOption() {
 	    // Write code here that turns the phrase above into concrete actions
+		
 		//throw new io.cucumber.java.PendingException();
 	}
 	@Given("Event details dialog is displayed")
