@@ -14,25 +14,19 @@ import io.cucumber.java.en.Then;
 
 public class addEventUserSteps {
 	eventPlannerApp app;
-<<<<<<< HEAD
 	public boolean isLoggedU;
 	
-=======
 	Scanner scan;
 	boolean unbooked;
 	boolean addeventselected;
 	boolean completedata;
->>>>>>> branch 'AQ_Branch' of https://github.com/Qasrawi03Ghassan/eventPlanner
 	public addEventUserSteps() {
 		app = eventPlannerApp.createApp();
-<<<<<<< HEAD
 		isLoggedU = false;
-=======
 		scan = new Scanner(System.in);
 		
 	    unbooked=true;
 	    
->>>>>>> branch 'AQ_Branch' of https://github.com/Qasrawi03Ghassan/eventPlanner
 	}
 	@Given("User is logged in")
 	public void userIsLoggedIn() {
@@ -44,12 +38,9 @@ public class addEventUserSteps {
 	@Given("User selected add a new event option")
 	public void userSelectedAddANewEventOption() {
 	    // Write code here that turns the phrase above into concrete actions
-<<<<<<< HEAD
 		
-=======
 		addeventselected=true;
 		assertTrue("User selected add a new event option",addeventselected);
->>>>>>> branch 'AQ_Branch' of https://github.com/Qasrawi03Ghassan/eventPlanner
 		//throw new io.cucumber.java.PendingException();
 	}
 	@Given("User doesnt enter a booked date")
