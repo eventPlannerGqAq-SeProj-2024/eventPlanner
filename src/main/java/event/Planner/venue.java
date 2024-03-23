@@ -72,8 +72,10 @@ public class venue {
   {
 	  Capacity =c;
   }
-  public void setAmenities(String a)
+  public void setAmenities(String provname)
   {
+	    if(provname.equals(provider.getName()))
+	    {
 	    String Amenity;
 		Scanner input = new Scanner(System.in);
 		System.out.println("enter Amenity names:(type 'done' to finish)");
@@ -83,6 +85,10 @@ public class venue {
 				break;
 			Amenities.add(Amenity);
 		}
+	    }
+	    else {
+	    	System.out.println("you dont have permission to edit this venue");
+	    }
   }
   public void viewAmenities()
 	{

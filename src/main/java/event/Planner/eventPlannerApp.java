@@ -146,8 +146,6 @@ public class eventPlannerApp {
 		String username =scan1.next();
 		System.out.println("enter password");
 		String password =scan1.next();
-		app.checkPass(username,password);
-		
-	}
-	
+		app.checkPass(username,password);	
+	}	
 }
