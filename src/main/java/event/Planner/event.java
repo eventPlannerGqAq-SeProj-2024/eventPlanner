@@ -6,25 +6,46 @@ import javax.swing.JOptionPane;
 
 public class event {
 	
-	private String Name,Date,Theme,Description;
+	private String Name,Date,Theme,Description,ID;
 	private venue Venue;
+	private Provider provider;
 	private int Attendee_count;
 	private ArrayList<String> Guestlist = new ArrayList<String>();
-	public event (String name,venue venue,String date,String theme,String description,int attendee_count)
+	public event (String i,String name,venue venue,String date,String theme,String description,int attendee_count,Provider p)
 	{
+		ID=i;
 		Name=name;
 		Venue= venue;
 		Date = date;
 		Theme = theme;
 		Description = description;
-		
+		provider = p;
 		Attendee_count = attendee_count;
 	}
+	public event ()
+	{
+		Name="000";
+		ID="000";
+		Venue= null;
+		Date = "1/1/2024";
+		Theme = "000";
+		Description = "000";
+		provider = null;
+		Attendee_count = 0;
+	}
+	public void setProvider(Provider n)
+	{
+		provider =n;
+	};
+	public void setID(String n)
+	{
+		ID =n;
+	};
 	public void setName(String n)
 	{
 		Name =n;
 	};
-	public void setLocatoin(venue n)
+	public void setVenue(venue n)
 	{
 		Venue =n;
 	};
@@ -50,6 +71,10 @@ public class event {
 	{
 		return Name;
 	};
+	public String getID()
+	{
+		return ID;
+	};
 	public venue getVenue()
 	{
 		return Venue;
@@ -70,6 +95,11 @@ public class event {
 	{
 		return Attendee_count;
 	};
+	public Provider getProvider()
+	{
+		return provider;
+	};
+
 	public void setGuestlist()
 	{
 		String Guestname;

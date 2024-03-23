@@ -20,6 +20,8 @@ public class addEventUserSteps {
 	public void userSelectedAddANewEventOption() {
 	    // Write code here that turns the phrase above into concrete actions
 		//throw new io.cucumber.java.PendingException();
+		
+		
 	}
 	@Given("Event details dialog is displayed")
 	public void eventDetailsDialogIsDisplayed() {

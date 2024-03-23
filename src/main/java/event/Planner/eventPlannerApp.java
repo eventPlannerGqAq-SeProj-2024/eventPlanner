@@ -10,6 +10,10 @@ public class eventPlannerApp {
 	public  ArrayList<User> Users = new ArrayList<User>();
 	public  ArrayList<Provider> Providers = new ArrayList<Provider>();
 	
+	//new
+	public  ArrayList<event> events = new ArrayList<event>();
+	public  ArrayList<venue> venues = new ArrayList<venue>();
+	//new
 	public static eventPlannerApp app;
 	
 	public static eventPlannerApp createApp() {
@@ -26,12 +30,14 @@ public class eventPlannerApp {
 	}
 	
 	public void setLists() {
-		for(int i=0;i<4;i++) {
+		for(int i=0;i<6;i++) {
 			Admins.add(new Admin());
 			Users.add(new User());
 			Providers.add(new Provider());
+			venues.add(new venue());
+			events.add(new event());
 		}
-		
+		/*
 		Admins.get(0).setUsername("1A");
 		Admins.get(1).setUsername("2A");
 		Admins.get(2).setUsername("3A");
@@ -57,7 +63,31 @@ public class eventPlannerApp {
 		Providers.get(0).setPassword("provider1");
 		Providers.get(1).setPassword("provider2");
 		Providers.get(2).setPassword("provider3");
-		
+		*/
+		 
+		  
+		for (int i=0;i<6;i++)
+		{
+			Admins.get(i).setUsername(Integer.toString(i+1)+"A");
+			Admins.get(i).setPassword("admin"+Integer.toString(i+1));
+			
+			Providers.get(i).setUsername(Integer.toString(i+1)+"P");
+			Providers.get(i).setPassword("provider"+Integer.toString(i+1));
+			
+			Users.get(i).setUsername(Integer.toString(i+1)+"U");
+			Users.get(i).setPassword("users"+Integer.toString(i+1));
+			
+			venues.get(i).setName("venue"+Integer.toString(i+1));
+			venues.get(i).setID(Integer.toString(i+1));
+			venues.get(i).setlocation("location"+Integer.toString(i+1));
+			
+			events.get(i).setID(Integer.toString(i+1));
+			events.get(i).setName("event"+Integer.toString(i+1));
+			events.get(i).setProvider(Providers.get(i));
+			events.get(i).setVenue(venues.get(i));
+			venues.get(i).setBooked(true);
+		}
+
 	}
 	
 	public boolean checkPass(String username,String pass) {
