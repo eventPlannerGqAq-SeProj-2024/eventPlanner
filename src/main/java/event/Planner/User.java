@@ -87,4 +87,12 @@ public class User {
 		return isLogged;
 	}
 	
+	public boolean isValidEmail() {
+		if(email.contains("@") && email.contains(".com"))return true;
+		return false;
+	}
+	
+	
+	
+	
 }

@@ -3,9 +3,9 @@ package event.Planner;
 public class wedding extends event {
 	
 	private String Bride,Groom,Officiant,Wedding_type,DJ,Cake;
-	public wedding(String name,venue Venue,String date,String theme,String description,int attendee_count,String bride, String groom,String officiant,String wedding_type, String dj,String cake)
+	public wedding(String name,venue venue,String date,String theme,String description,int attendee_count,String bride, String groom,String officiant,String wedding_type, String dj,String cake)
 	{
-		super(name,Venue,date,theme,description,attendee_count);		
+		super(name,venue,date,theme,description,attendee_count);		
 		Officiant = officiant;
 		Wedding_type = wedding_type;
 		DJ = dj;

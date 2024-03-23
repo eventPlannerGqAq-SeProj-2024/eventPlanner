@@ -1,22 +1,64 @@
 package event.Planner;
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class venue {
-  private String Name,location;
+  private String Name,location,ID;
+  private Provider provider;
   private ArrayList<String> Amenities = new ArrayList<String>();
-  private int Capacity, Price;
-  public venue(String n,String l,int c, int p)
+  private int Capacity =100, Price= 100,Area =1000;
+  private ArrayList<String> Booked = new ArrayList<String>();
+  public venue(String i,String n,String l,int c,int a, int p,Provider pr)
+  {
+	
+	  ID =i;
+	  Name =n;
+	  location =l;
+	  Capacity =c;
+	  Price =p;	
+	  Area =a;
+	  provider=pr;
+  }
+  public venue(String n,String l,int c,int a, int p,Provider pr)
   {
 	  Name =n;
 	  location =l;
 	  Capacity =c;
 	  Price =p;	
+	  Area =a;
+	  provider=pr;
+  }
+  public venue()
+  {
+	    ID = "000";
+		Name = "000";
+		location= "000";
+		provider=null;
+	//	Area = 1000;
+	//	Booked = false;
+	//	Price = 100;
+	//	Capacity = 100;	
   }
   public void setName(String p) 
   {
 	  Name =p;
+  }
+  public void setProvider(Provider p) 
+  {
+	  provider =p;
+  }
+  public void setID(String p) 
+  {
+	  ID =p;
+  }
+  public void setArea(int p) 
+  {
+	  Area =p;
+  }
+  public void addBookedDate(String p) 
+  {
+	  Booked.add(p);
   }
   public void setlocation(String p) 
   {
@@ -30,8 +72,10 @@ public class venue {
   {
 	  Capacity =c;
   }
-  public void setAmenities(String a)
+  public void setAmenities(String provname)
   {
+	    if(provname.equals(provider.getName()))
+	    {
 	    String Amenity;
 		Scanner input = new Scanner(System.in);
 		System.out.println("enter Amenity names:(type 'done' to finish)");
@@ -41,6 +85,10 @@ public class venue {
 				break;
 			Amenities.add(Amenity);
 		}
+	    }
+	    else {
+	    	System.out.println("you dont have permission to edit this venue");
+	    }
   }
   public void viewAmenities()
 	{
@@ -61,6 +109,30 @@ public class venue {
   {
 	  return Name;
   }
+  public String getID() 
+  {
+	  return ID;
+  }
+  public int getArea() 
+  {
+	  return Area;
+  }
+  
+  //returns true if booked and false if free
+  public boolean checkIfDateIsBooked(String date)
+  {
+	  if(Booked.isEmpty())
+	  return false;
+	  
+	  boolean booked=false;
+	  
+	  for(int i=Booked.size();i>0;i--)
+	  {
+		  if(date.equals(Booked.get(i)))
+		  booked=true;
+	  }
+	  return booked;
+  }
   public String getlocation() 
   {
 	  return location;
@@ -72,5 +144,9 @@ public class venue {
   public int getPrice() 
   {
 	  return Price;
+  }
+  public Provider getProvider() 
+  {
+	  return provider;
   }
 }
