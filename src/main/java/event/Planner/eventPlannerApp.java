@@ -35,7 +35,6 @@ public class eventPlannerApp {
 			Users.add(new User());
 			Providers.add(new Provider());
 			venues.add(new venue());
-			events.add(new event());
 		}
 		/*
 		Admins.get(0).setUsername("1A");
@@ -64,7 +63,7 @@ public class eventPlannerApp {
 		Providers.get(1).setPassword("provider2");
 		Providers.get(2).setPassword("provider3");
 		*/
-		 
+		 //String name,venue venue,String date,String theme,String description,int attendee_count
 		  
 		for (int i=0;i<6;i++)
 		{
@@ -73,23 +72,54 @@ public class eventPlannerApp {
 			
 			Providers.get(i).setUsername(Integer.toString(i+1)+"P");
 			Providers.get(i).setPassword("provider"+Integer.toString(i+1));
-			
+		
 			Users.get(i).setUsername(Integer.toString(i+1)+"U");
 			Users.get(i).setPassword("users"+Integer.toString(i+1));
-			
+		
 			venues.get(i).setName("venue"+Integer.toString(i+1));
+			venues.get(i).setProvider(Providers.get(i));
 			venues.get(i).setID(Integer.toString(i+1));
 			venues.get(i).setlocation("location"+Integer.toString(i+1));
+		
+			events.add(new event("event"+Integer.toString(i+1),venues.get(i),Integer.toString(i+1)+"/"+Integer.toString(i+1)+"/2024","00","00",100));
 			
-			events.get(i).setID(Integer.toString(i+1));
-			events.get(i).setName("event"+Integer.toString(i+1));
-			events.get(i).setProvider(Providers.get(i));
-			events.get(i).setVenue(venues.get(i));
-			venues.get(i).setBooked(true);
 		}
-
 	}
-	
+	public void userAddEvent()
+	{
+		int i=venues.size();
+		String date;
+		for(int j=i;j>0;j--)
+		{
+			System.out.println("j"+app.venues.get(j).getName());
+		}
+		event n = new event();
+		
+		System.out.println("enter event name:");
+		n.setID(scan.next());
+		
+		n.failed=false;
+		while(!n.failed) {
+		System.out.println("\nenter event date: (example 1/1/2024)");
+		date=scan.next();
+		n.setDate(date);
+		
+		System.out.println("enter venue number:");
+		n.setVenue(app.venues.get(scan.nextInt()),date);
+		}
+		
+		
+		System.out.println("enter event theme");
+		n.setTheme(scan.next());
+
+		System.out.println("enter event description");
+		n.setDescription(scan.next());
+		
+		System.out.println("enter attendee count");
+		n.setAttendee_count(scan.nextInt());
+		
+		events.add(n);
+	}
 	public boolean checkPass(String username,String pass) {
 		
 		for(int i=0;i<getMaxSize();i++) {
@@ -107,6 +137,17 @@ public class eventPlannerApp {
 			}
 		}
 		return false;
+	}
+	public static void main(String args[]) {
+		eventPlannerApp.createApp();
+		app.setLists();
+		Scanner scan1 = new Scanner(System.in);
+		System.out.println("enter username");
+		String username =scan1.next();
+		System.out.println("enter password");
+		String password =scan1.next();
+		app.checkPass(username,password);
+		
 	}
 	
 }

@@ -1,28 +1,40 @@
 package event.Planner;
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class venue {
   private String Name,location,ID;
+  private Provider provider;
   private ArrayList<String> Amenities = new ArrayList<String>();
   private int Capacity =100, Price= 100,Area =1000;
-  private boolean Booked =false;
-  public venue(String i,String n,String l,int c,int a, int p, boolean b)
+  private ArrayList<String> Booked = new ArrayList<String>();
+  public venue(String i,String n,String l,int c,int a, int p,Provider pr)
   {
+	
 	  ID =i;
 	  Name =n;
 	  location =l;
 	  Capacity =c;
 	  Price =p;	
-	  Booked =b;
 	  Area =a;
+	  provider=pr;
+  }
+  public venue(String n,String l,int c,int a, int p,Provider pr)
+  {
+	  Name =n;
+	  location =l;
+	  Capacity =c;
+	  Price =p;	
+	  Area =a;
+	  provider=pr;
   }
   public venue()
   {
 	    ID = "000";
 		Name = "000";
 		location= "000";
+		provider=null;
 	//	Area = 1000;
 	//	Booked = false;
 	//	Price = 100;
@@ -32,6 +44,10 @@ public class venue {
   {
 	  Name =p;
   }
+  public void setProvider(Provider p) 
+  {
+	  provider =p;
+  }
   public void setID(String p) 
   {
 	  ID =p;
@@ -40,9 +56,9 @@ public class venue {
   {
 	  Area =p;
   }
-  public void setBooked(boolean p) 
+  public void addBookedDate(String p) 
   {
-	  Booked =p;
+	  Booked.add(p);
   }
   public void setlocation(String p) 
   {
@@ -95,9 +111,21 @@ public class venue {
   {
 	  return Area;
   }
-  public boolean getBooked()
+  
+  //returns true if booked and false if free
+  public boolean checkIfDateIsBooked(String date)
   {
-	  return Booked;
+	  if(Booked.isEmpty())
+	  return false;
+	  
+	  boolean booked=false;
+	  
+	  for(int i=Booked.size();i>0;i--)
+	  {
+		  if(date.equals(Booked.get(i)))
+		  booked=true;
+	  }
+	  return booked;
   }
   public String getlocation() 
   {
@@ -110,5 +138,9 @@ public class venue {
   public int getPrice() 
   {
 	  return Price;
+  }
+  public Provider getProvider() 
+  {
+	  return provider;
   }
 }
