@@ -7,31 +7,38 @@ import java.util.Scanner;
 
 
 import event.Planner.eventPlannerApp;
+import static org.junit.Assert.*;
+import org.junit.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class addEventUserSteps {
 	eventPlannerApp app;
+	public boolean isLoggedU;
+	
 	Scanner scan;
 	boolean unbooked;
 	boolean addeventselected;
 	boolean completedata;
 	public addEventUserSteps() {
 		app = eventPlannerApp.createApp();
+		isLoggedU = false;
 		scan = new Scanner(System.in);
 		
 	    unbooked=true;
 	    
 	}
-	
 	@Given("User is logged in")
 	public void userIsLoggedIn() {
 	    // Write code here that turns the phrase above into concrete actions
+		isLoggedU = true;
+		assertTrue("User is not logged in",isLoggedU);
 		//throw new io.cucumber.java.PendingException();
 	}
 	@Given("User selected add a new event option")
 	public void userSelectedAddANewEventOption() {
 	    // Write code here that turns the phrase above into concrete actions
+		
 		addeventselected=true;
 		assertTrue("User selected add a new event option",addeventselected);
 		//throw new io.cucumber.java.PendingException();

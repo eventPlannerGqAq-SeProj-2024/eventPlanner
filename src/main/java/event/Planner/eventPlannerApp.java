@@ -21,7 +21,7 @@ public class eventPlannerApp {
 		return app;
 	}
 	
-	public int getMaxSize() {
+	public int getMaxSizeList() {
 		int size = Users.size();
 		if(Users.size() > Admins.size() && Users.size() > Providers.size())return Users.size();
 		else if(Admins.size() > Users.size() && Admins.size() > Providers.size())return Admins.size();
@@ -41,11 +41,15 @@ public class eventPlannerApp {
 		Admins.get(1).setUsername("2A");
 		Admins.get(2).setUsername("3A");
 		Admins.get(3).setUsername("user name");
+		*/
 		
-		Users.get(0).setUsername("1U");
-		Users.get(1).setUsername("2U");
-		Users.get(2).setUsername("3U");
-		
+		Users.get(0).setName("Ahmad");
+		Users.get(1).setName("Ali");
+		Users.get(2).setName("Tuqa");
+		Users.get(3).setName("Khaled");
+		Users.get(4).setName("Jana");
+		Users.get(5).setName("Sara");
+		/*
 		Providers.get(0).setUsername("1P");
 		Providers.get(1).setUsername("2P");
 		Providers.get(2).setUsername("3P");
@@ -74,7 +78,7 @@ public class eventPlannerApp {
 			Providers.get(i).setPassword("provider"+Integer.toString(i+1));
 		
 			Users.get(i).setUsername(Integer.toString(i+1)+"U");
-			Users.get(i).setPassword("users"+Integer.toString(i+1));
+			Users.get(i).setPassword("user"+Integer.toString(i+1));
 		
 			venues.get(i).setName("venue"+Integer.toString(i+1));
 			venues.get(i).setProvider(Providers.get(i));
@@ -122,7 +126,7 @@ public class eventPlannerApp {
 	}
 	public boolean checkPass(String username,String pass) {
 		
-		for(int i=0;i<getMaxSize();i++) {
+		for(int i=0;i<getMaxSizeList();i++) {
 			if(Admins.get(i).getUsername().equals(username) && Admins.get(i).getPass().equals(pass)) {
 				Admins.get(i).setLogged(true);
 				return true;
@@ -138,16 +142,79 @@ public class eventPlannerApp {
 		}
 		return false;
 	}
+	
+	public String getLoggedRoleName() {
+		String name = "";
+		for(int i=0;i<app.getMaxSizeList();i++) {
+			if(app.Users.get(i).isLogged())name = app.Users.get(i).getName();
+			if(app.Admins.get(i).isLogged())name = app.Admins.get(i).getName();
+			if(app.Providers.get(i).isLogged())name = app.Providers.get(i).getName();
+		}
+		return name;
+	}	
+	
+	public void showMainMenu() {
+		
+		System.out.println("==============================================================================");
+		System.out.println("welcome to the event planner application");
+		System.out.println("==============================================================================");
+		
+		System.out.println("Please choose an option (Enter the corresponding letter (capital or small)\nto excute the selected operation):\n\n[A] Login\n[B] Sign up\n[Any other character] Exit\n");
+	}
+	
 	public static void main(String args[]) {
 		eventPlannerApp.createApp();
 		app.setLists();
 		Scanner scan1 = new Scanner(System.in);
-		System.out.println("enter username");
-		String username =scan1.next();
-		System.out.println("enter password");
-		String password =scan1.next();
-		app.checkPass(username,password);
 		
+		String username = "";
+		String pass = "";
+		char choice = '\n';
+		char choice1 = '\n';
+		boolean noLoop = false;
+		
+		do {
+			app.showMainMenu();
+			
+			choice = scan1.next().charAt(0);
+			
+			scan1.nextLine(); // to consume left over line
+			
+			System.out.println("======================================================");
+			
+			if(choice == 'A' || choice == 'a') {
+				do {
+					
+					System.out.print("Please enter your username here: ");		
+					username =scan1.nextLine();
+					System.out.println();
+					
+					System.out.print("now please enter your password here: ");
+					pass =scan1.nextLine();
+					System.out.println();
+					
+					if(app.checkPass(username,pass)) {
+						noLoop = true;
+						System.out.println("Welcome " + app.getLoggedRoleName() + ", nice to meet you again");
+						System.out.println("======================================================");
+					}
+					else {
+						System.out.println("Wrong username or password, would you like to try again? (enter [Y/y] for yes)");
+						choice1 = scan1.next().charAt(0);
+						scan1.nextLine();
+						
+					}
+				}while(!app.checkPass(username, pass) && (choice1 =='Y' || choice1 == 'y'));
+			}
+			else if(choice == 'B' || choice == 'b') {
+				noLoop = true;
+				//break; //To be implemented
+			}
+			else {
+				System.out.println("Thanks for using our application, have a nice day!");
+				System.exit(0);				
+			}
+		}while((choice1  != 'Y' || choice1 != 'y') && noLoop == false);
 		
 		
 	}	

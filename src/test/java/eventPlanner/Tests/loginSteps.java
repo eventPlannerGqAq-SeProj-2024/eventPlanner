@@ -2,7 +2,7 @@ package eventPlanner.Tests;
 
 import java.util.*;
 import static org.junit.Assert.*;
-
+import org.junit.*;
 import event.Planner.eventPlannerApp;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
