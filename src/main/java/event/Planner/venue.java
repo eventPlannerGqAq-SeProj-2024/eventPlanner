@@ -126,7 +126,7 @@ public class venue {
 	  
 	  boolean booked=false;
 	  
-	  for(int i=Booked.size();i>0;i--)
+	  for(int i=Booked.size()-1;i>0;i--)
 	  {
 		  if(date.equals(Booked.get(i)))
 		  booked=true;
@@ -149,4 +149,38 @@ public class venue {
   {
 	  return provider;
   }
+  public void addEvent()//String name,String date,String theme,String description,int attendee_count)
+  {
+	  int attendee_count=1;
+	   Scanner scan = new Scanner(System.in);
+	   System.out.println("enter event name:");
+	   String name = scan.next();
+	   System.out.println("enter event date:");
+	   String date = scan.next();
+	   System.out.println("enter event theme:");
+	   String theme = scan.next();
+	   System.out.println("enter event description:");
+	   String description = scan.next();
+	   System.out.println("enter attendee count:");
+	   boolean a = true;
+	
+	   try {
+	   attendee_count = scan.nextInt();
+	   }
+	   catch(InputMismatchException ex) {
+		   System.out.println("please enter a number for attendee count:");
+		   Scanner bb = new Scanner(System.in);
+		   attendee_count = bb.nextInt();
+		   
+	   }
+	 
+	  new event(name,this,date,theme,description,attendee_count);
+  	
+  	}
+  public void addEvent(String name,String date,String theme,String description,int attendee_count)
+  {
+	   new event(name,this,date,theme,description,attendee_count);
+  	
+  	}
 }
+

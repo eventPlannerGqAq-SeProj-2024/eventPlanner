@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 
 public class event {
 	
+	
 	private String Name,Date,Theme,Description,ID;
 	private venue Venue;
 	//private Provider provider;
@@ -39,6 +40,8 @@ public class event {
 		venue.addBookedDate(date);
 		}
 	}
+	
+	
 	public event ()
 	{
 		failed =true;
