@@ -92,7 +92,7 @@ public class venue {
   }
   public void viewAmenities()
 	{
-		System.out.printf("{");
+	  System.out.println("{");
 		for(int i=Amenities.size();i>0;i--)
 		{	
 			 System.out.printf("%s",Amenities.get(i-1));

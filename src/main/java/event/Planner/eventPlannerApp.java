@@ -195,6 +195,7 @@ public class eventPlannerApp {
 					
 					if(app.checkPass(username,pass)) {
 						noLoop = true;
+						System.out.println("======================================================");
 						System.out.println("Welcome " + app.getLoggedRoleName() + ", nice to meet you again");
 						System.out.println("======================================================");
 					}
