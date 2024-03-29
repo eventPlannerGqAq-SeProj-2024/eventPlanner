@@ -1,5 +1,7 @@
 package eventPlanner.Tests;
 
+import event.Planner.Admin;
+import event.Planner.Provider;
 import event.Planner.User;
 import event.Planner.eventPlannerApp;
 import java.util.*;
@@ -12,12 +14,19 @@ import io.cucumber.java.en.When;
 
 public class SignupSteps {
 	eventPlannerApp app;
+	
 	User user;
+	Admin admin;
+	Provider provider;
+		
 	boolean isValid;
 	boolean confirm;
+	
 	boolean isUser;
 	boolean isAdmin;
 	boolean isProvider;
+	
+	boolean roleSelected;
 	Scanner scan;
 	
 	public SignupSteps(){
@@ -25,11 +34,15 @@ public class SignupSteps {
 		app.setLists();
 		
 		user = new User();
+		admin = new Admin();
+		provider = new Provider();
+		
 		isValid = false;
 		confirm = false;
 		isUser = false;
 		isAdmin = false;
 		isProvider = false;
+		roleSelected = false;
 		
 		scan = new Scanner(System.in);
 		
@@ -38,30 +51,29 @@ public class SignupSteps {
 	
 	
 	//User scenario:
-	@Given("user enters valid  data {string} {string} {string} {string} {string} {string}")
-	public void userEntersValidData(String n, String u, String e, String bd, String g, String p) {
+	@Given("user enters valid  data as user {string} {string} {string} {string} {string} {string}")
+	public void userEntersValidDataAsUser(String n, String u, String e, String bd, String g, String p) {
 	    // Write code here that turns the phrase above into concrete actions
-		System.out.print("Name:");n = scan.nextLine();
+		System.out.print("Name: ");n = scan.nextLine();
 		user.setName(n);
 		
-		System.out.print("Username:");u = scan.nextLine();
+		System.out.print("Username: ");u = scan.nextLine();
 		user.setUsername(u);
 		
-		System.out.print("Email:");e = scan.nextLine();
+		System.out.print("Email: ");e = scan.nextLine();
 		user.setEmail(e);
 		
-		System.out.print("Birthdate:");bd = scan.nextLine();
+		System.out.print("Birthdate: ");bd = scan.nextLine();
 		user.setBday(bd);
 		
-		System.out.print("Gender:");g = scan.nextLine();
+		System.out.print("Gender: ");g = scan.nextLine();
 		user.setGender(g.charAt(0));
 		
-		System.out.print("Password:");p = scan.nextLine();
+		System.out.print("Password: ");p = scan.nextLine();
 		user.setPassword(p);		
 		
 		isValid = true;
 		assertTrue("The data entered are not valid",isValid);
-		
 	    //throw new io.cucumber.java.PendingException();
 	}
 
@@ -96,10 +108,13 @@ public class SignupSteps {
 	@Then("Add a new user")
 	public void addANewUser() {
 	    // Write code here that turns the phrase above into concrete actions
+		System.out.println();
 		System.out.println("Before: ");
 		for(int i=0;i<app.Users.size();i++) {
 			System.out.println(app.Users.get(i).getName());
 		}
+		System.out.println();
+
 		
 		app.Users.add(user);
 		
@@ -109,60 +124,146 @@ public class SignupSteps {
 		}
 	    //throw new io.cucumber.java.PendingException();
 	}
-
-
-	@Given("user enters wrong format for the date or email values {string} {string} {string} {string} {string} {string}")
-	public void userEntersWrongFormatForTheDateOrEmailValues(String n, String u, String e, String b, String g, String p) {
+	
+	//Administrator role:
+	@Given("user enters valid  data as admin {string} {string} {string} {string} {string} {string}")
+	public void userEntersValidDataAsAdmin(String n, String u, String e, String bd, String g, String p) {
 	    // Write code here that turns the phrase above into concrete actions
+		System.out.print("Name: ");n = scan.nextLine();
+		admin.setName(n);
+		
+		System.out.print("Username: ");u = scan.nextLine();
+		admin.setUsername(u);
+		
+		System.out.print("Email: ");e = scan.nextLine();
+		admin.setEmail(e);
+		
+		System.out.print("Birthdate: ");bd = scan.nextLine();
+		admin.setBday(bd);
+		
+		System.out.print("Gender: ");g = scan.nextLine();
+		admin.setGender(g.charAt(0));
+		
+		System.out.print("Password: ");p = scan.nextLine();
+		admin.setPassword(p);		
+		
+		isValid = true;
+		assertTrue("The data entered are not valid",isValid);
 	    //throw new io.cucumber.java.PendingException();
 	}
+
+
+
+		@Given("user seleceted admin role")
+		public void userSelecetedAdminRole() {
+		    // Write code here that turns the phrase above into concrete actions
+			isAdmin = true;
+			assertTrue("The user didnt select admin role",isAdmin);
+		    //throw new io.cucumber.java.PendingException();
+		}
+		@Then("Add a new admin")
+		public void addANewAdmin() {
+		    // Write code here that turns the phrase above into concrete actions
+			System.out.println();
+			System.out.println("Before: ");
+			for(int i=0;i<app.Admins.size();i++) {
+				System.out.println(app.Admins.get(i).getName());
+			}
+			System.out.println();
+
+			
+			app.Admins.add(admin);
+			
+			
+			System.out.println("After: ");
+			for(int i=0;i<app.Admins.size();i++) {
+				System.out.println(app.Admins.get(i).getName());
+			}
+		    //throw new io.cucumber.java.PendingException();
+		}
+
+		//Provider role:
+		@Given("user enters valid  data as provider {string} {string} {string} {string} {string} {string}")
+		public void userEntersValidDataAsProvider(String n, String u, String e, String bd, String g, String p) {
+		    // Write code here that turns the phrase above into concrete actions
+			System.out.print("Name: ");n = scan.nextLine();
+			provider.setName(n);
+			
+			System.out.print("Username: ");u = scan.nextLine();
+			provider.setUsername(u);
+			
+			System.out.print("Email: ");e = scan.nextLine();
+			provider.setEmail(e);
+			
+			System.out.print("Birthdate: ");bd = scan.nextLine();
+			provider.setBday(bd);
+			
+			System.out.print("Gender: ");g = scan.nextLine();
+			provider.setGender(g.charAt(0));
+			
+			System.out.print("Password: ");p = scan.nextLine();
+			provider.setPassword(p);		
+			
+			isValid = true;
+			assertTrue("The data entered are not valid",isValid);
+		    //throw new io.cucumber.java.PendingException();
+		}
+
+
+
+		@Given("user seleceted provider role")
+		public void userSelecetedProviderRole() {
+		    // Write code here that turns the phrase above into concrete actions
+			isProvider = true;
+			assertTrue("The user didnt select providor role",isProvider);
+		    //throw new io.cucumber.java.PendingException();
+		}
+		@Then("Add a new provider")
+		public void addANewProvider() {
+		    // Write code here that turns the phrase above into concrete actions
+			System.out.println();
+			System.out.println("Before: ");
+			for(int i=0;i<app.Providers.size();i++) {
+				System.out.println(app.Providers.get(i).getName());
+			}
+			System.out.println();
+
+			
+			app.Providers.add(provider);
+			
+			System.out.println("After: ");
+			for(int i=0;i<app.Providers.size();i++) {
+				System.out.println(app.Providers.get(i).getName());
+			}
+		    //throw new io.cucumber.java.PendingException();
+		}
+	
+	@Given("user enters wrong format for the date or email values {string} {string}")
+	public void userEntersWrongFormatForTheDateOrEmailValues(String e, String bd) {
+	    // Write code here that turns the phrase above into concrete actions
+		System.out.println("Email: ");e = scan.nextLine();
+		System.out.println("Birthday: ");bd = scan.nextLine();
+		
+		assertFalse("Email is valid",user.isValidEmail(e));
+		assertFalse("Birthday date is valid",user.isValidDate(bd));
+	    //throw new io.cucumber.java.PendingException();
+	}
+
+
+
 	@Given("user seleceted role type")
 	public void userSelecetedRoleType() {
 	    // Write code here that turns the phrase above into concrete actions
+		roleSelected = true;
+		assertTrue("User didnt select a rule yet",roleSelected);
 	    //throw new io.cucumber.java.PendingException();
 	}
 	@Then("Show a try again dialog")
 	public void showATryAgainDialog() {
 	    // Write code here that turns the phrase above into concrete actions
+				
 	    //throw new io.cucumber.java.PendingException();
 	}
-	
-	//Administrator role:
-	@Given("user seleceted admin role")
-	public void userSelecetedAdminRole() {
-	    // Write code here that turns the phrase above into concrete actions
-	    //throw new io.cucumber.java.PendingException();
-	}
-	@Then("Add a new admin")
-	public void addANewAdmin() {
-	    // Write code here that turns the phrase above into concrete actions
-	    //throw new io.cucumber.java.PendingException();
-	}
-
-	//Provider role:
-	@Given("user seleceted provider role")
-	public void userSelecetedProviderRole() {
-	    // Write code here that turns the phrase above into concrete actions
-	    //throw new io.cucumber.java.PendingException();
-	}
-	@Then("Add a new provider")
-	public void addANewProvider() {
-	    // Write code here that turns the phrase above into concrete actions
-	    //throw new io.cucumber.java.PendingException();
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
+		
 	
 }
