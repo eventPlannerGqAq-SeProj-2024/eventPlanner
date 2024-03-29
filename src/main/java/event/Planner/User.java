@@ -17,8 +17,7 @@ public class User {
 		email = "temp@temp.com";
 		bday = "dd/mm/yyyy";
 		gender = 'x';
-		isLogged = false;
-		
+		isLogged = false;		
 	}
 	
 	public User(String u,String p,String n, String e, String b, char g,boolean l) {
