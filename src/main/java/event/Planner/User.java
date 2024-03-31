@@ -87,7 +87,7 @@ public class User {
 	}
 	
 	public boolean isValidEmail(String e) {
-		e.toLowerCase();
+		e = e.toLowerCase();
 		if(!e.isEmpty()) {
 			if(e.contains("@") && e.contains(".com"))return true;
 		}

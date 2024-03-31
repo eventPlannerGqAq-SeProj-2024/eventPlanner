@@ -25,7 +25,7 @@ public class eventPlannerApp {
 		int size = Users.size();
 		if(Users.size() > Admins.size() && Users.size() > Providers.size())return Users.size();
 		else if(Admins.size() > Users.size() && Admins.size() > Providers.size())return Admins.size();
-		else if(Providers.size() > Admins.size() && Providers.size() > Admins.size())return Providers.size();
+		else if(Providers.size() > Users.size() && Providers.size() > Admins.size())return Providers.size();
 		return size;
 	}
 		
