@@ -19,7 +19,7 @@ public class loginSteps {
 		
 		app = eventPlannerApp.createApp();
 		
-		app.setLists();
+		//app.setLists();
 		
 		scan = new Scanner(System.in);
 		
@@ -36,6 +36,8 @@ public class loginSteps {
 	@Given("that the admin is not logged in")
 	public void thatTheAdminIsNotLoggedIn() {
 	    // Write code here that turns the phrase above into concrete actions
+		app.setLists();
+		
 		isLoggedA = false;
 		assertFalse("The admin is already logged in",isLoggedA);
 	    //throw new io.cucumber.java.PendingException();
@@ -44,8 +46,10 @@ public class loginSteps {
 	public void adminEntersCorrectUserNameAndPassword(String username, String pass) {
 		// Write code here that turns the phrase above into concrete actions
 				
-				username = scan.nextLine();
-				pass = scan.nextLine();
+				//username = scan.nextLine();
+				//pass = scan.nextLine();
+				username = "1A";
+				pass = "admin1";
 				
 				if(isLoggedA == false) {
 					assertTrue("wrong username or password",app.checkPass(username,pass));
@@ -71,8 +75,11 @@ public class loginSteps {
 	@Given("admin enters wrong user name {string} or password {string}")
 	public void adminEntersWrongUserNameOrPassword(String username, String pass) {
 	    // Write code here that turns the phrase above into concrete actions
-		username = scan.nextLine();
-		pass = scan.nextLine();
+		//username = scan.nextLine();
+		//pass = scan.nextLine();
+		
+		username = "A1";
+		pass = "admin1";
 		
 		if(isLoggedA == false) {
 			assertFalse("correct ceredentials entered",app.checkPass(username,pass));
@@ -108,9 +115,10 @@ public class loginSteps {
 	@Given("the user enters correct {string} and {string}")
 	public void theUserEntersCorrectAnd(String username, String pass) {
 	    // Write code here that turns the phrase above into concrete actions
-				username = scan.nextLine();
-				pass = scan.nextLine();
-				
+				//username = scan.nextLine();
+				//pass = scan.nextLine();
+			username = "2U";
+			pass = "user2";
 				if(isLoggedA == false) {
 					assertTrue("wrong username or password",app.checkPass(username,pass));
 				}
@@ -135,8 +143,11 @@ public class loginSteps {
 	@Given("user enters wrong {string} or {string}")
 	public void userEntersWrongOr(String username, String pass) {
 	    // Write code here that turns the phrase above into concrete actions
-		username = scan.nextLine();
-		pass = scan.nextLine();
+		//username = scan.nextLine();
+		//pass = scan.nextLine();
+		
+		username = "2U";
+		pass = "user1";
 		
 		if(isLoggedU == false) {
 			assertFalse("Correct ceredentails were entered",app.checkPass(username,pass));
@@ -171,9 +182,11 @@ public class loginSteps {
 	@Given("the planner enters correct {string} and {string}")
 	public void thePlannerEntersCorrectAnd(String username, String pass) {
 	    // Write code here that turns the phrase above into concrete actions
-				username = scan.nextLine();
-				pass = scan.nextLine();
+				//username = scan.nextLine();
+				//pass = scan.nextLine();
 				
+		username = "3P";
+		pass = "provider3";
 				if(isLoggedA == false) {
 					assertTrue("wrong username or password",app.checkPass(username,pass));
 				}
@@ -198,8 +211,10 @@ public class loginSteps {
 	@Given("planner enters wrong {string} or {string}")
 	public void plannerEntersWrongOr(String username, String pass) {
 	    // Write code here that turns the phrase above into concrete actions
-		username = scan.nextLine();
-		pass = scan.nextLine();
+		//username = scan.nextLine();
+		//pass = scan.nextLine();
+		username = "3P";
+		pass = "prodiver33";
 		
 		if(isLoggedP == false) {
 			assertFalse("Correct ceredentials were entered",app.checkPass(username,pass));

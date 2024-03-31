@@ -15,7 +15,7 @@ public class User {
 		password = "temp";
 		name = "temp";
 		email = "temp@temp.com";
-		bday = "dd/mm/yy";
+		bday = "dd/mm/yyyy";
 		gender = 'x';
 		isLogged = false;		
 	}
@@ -86,8 +86,24 @@ public class User {
 		return isLogged;
 	}
 	
-	public boolean isValidEmail() {
-		if(email.contains("@") && email.contains(".com"))return true;
+	public boolean isValidEmail(String e) {
+		e = e.toLowerCase();
+		if(!e.isEmpty()) {
+			if(e.contains("@") && e.contains(".com"))return true;
+		}
+		
+		return false;
+	}
+	
+	public boolean isValidDate(String d) {
+		//Valid date is: dd/mm/yyyy , ex: 03/10/2024
+		
+		if(!d.isEmpty()) {
+			if(d.length() == 10) {
+				if(d.charAt(2) == '/' && d.charAt(5) == '/')return true;
+			}
+		}
+		
 		return false;
 	}
 	

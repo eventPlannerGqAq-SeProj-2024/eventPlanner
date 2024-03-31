@@ -12,6 +12,13 @@ public class SearchSteps {
 		app = eventPlannerApp.createApp();
 		
 	}
+	@Given("User is logged in")
+	public void userIsLoggedIn() {
+	    // Write code here that turns the phrase above into concrete actions
+	    //throw new io.cucumber.java.PendingException();
+	}
+
+
 
 	@Given("User selected search for a hall")
 	public void userSelectedSearchForAHall() {
