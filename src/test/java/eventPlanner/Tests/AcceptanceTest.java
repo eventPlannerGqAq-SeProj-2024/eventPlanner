@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 				 monochrome = true,
 				 snippets = SnippetType.CAMELCASE,
 				 glue = {"eventPlanner.Tests"},
-				 tags = "@t4")//Use this to change what scenarios you want to test, make the string empty to test all scenarios
+				 tags = "")//Use this to change what scenarios you want to test, make the string empty to test all scenarios
 
 public class AcceptanceTest {
 	

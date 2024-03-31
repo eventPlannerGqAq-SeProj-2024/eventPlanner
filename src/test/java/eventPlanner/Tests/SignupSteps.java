@@ -258,12 +258,31 @@ public class SignupSteps {
 		assertTrue("User didnt select a rule yet",roleSelected);
 	    //throw new io.cucumber.java.PendingException();
 	}
-	@Then("Show a try again dialog")
-	public void showATryAgainDialog() {
+	@Then("Show a try again dialog {string} {string}")
+	public void showATryAgainDialog(String e, String bd) {
 	    // Write code here that turns the phrase above into concrete actions
-				
+		do {
+			System.out.println("Please try again here:\n-Email: ");
+			e = scan.nextLine();
+			System.out.println();
+			
+			}while(!user.isValidEmail(e));
+		
+		do {
+			System.out.println("Please try again here:");
+			System.out.println("-Birthdate: ");
+			bd = scan.nextLine();
+			}while(!user.isValidDate(bd));
+		
+		
+		
+			assertTrue("Invalid email",user.isValidEmail(e));
+			assertTrue("Invalid date",user.isValidDate(bd));
 	    //throw new io.cucumber.java.PendingException();
 	}
+
+
+
 		
 	
 }

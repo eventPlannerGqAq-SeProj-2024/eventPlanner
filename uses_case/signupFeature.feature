@@ -32,6 +32,6 @@ Feature: Regesteration / Signup feature
   And user seleceted role type
   When user confirms addition
   Then check if email and date are valid "Email" "Date"
-  And Show a try again dialog
+  And Show a try again dialog "Email" "Date"
     
     

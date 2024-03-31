@@ -49,6 +49,20 @@ public class eventPlannerApp {
 		Users.get(3).setName("Khaled");
 		Users.get(4).setName("Jana");
 		Users.get(5).setName("Sara");
+		
+		Admins.get(0).setName("Yahya");
+		Admins.get(1).setName("Jameel");
+		Admins.get(2).setName("Tuqa");
+		Admins.get(3).setName("Yasmeen");
+		Admins.get(4).setName("Adel");
+		Admins.get(5).setName("Nora");
+		
+		Providers.get(0).setName("Hamed");
+		Providers.get(1).setName("Anwar");
+		Providers.get(2).setName("Mohammad");
+		Providers.get(3).setName("Fatemah");
+		Providers.get(4).setName("Sohair");
+		Providers.get(5).setName("Isa");
 		/*
 		Providers.get(0).setUsername("1P");
 		Providers.get(1).setUsername("2P");
@@ -163,14 +177,14 @@ public class eventPlannerApp {
 	}
 	
 	public static void main(String args[]) {
-		eventPlannerApp.createApp();
+		app = eventPlannerApp.createApp();
 		app.setLists();
 		Scanner scan1 = new Scanner(System.in);
 		
 		String username = "";
 		String pass = "";
-		char choice = '\n';
-		char choice1 = '\n';
+		char choice = '\0';
+		char choice1 = '\0';
 		boolean noLoop = false;
 		
 		do {
@@ -209,7 +223,30 @@ public class eventPlannerApp {
 			}
 			else if(choice == 'B' || choice == 'b') {
 				noLoop = true;
-				//break; //To be implemented
+				
+				//To be implemented
+				char c0 = '\0';
+				char c1 = '\0';
+				System.out.println("Please select your role here:\n[U] User\n[A] Admin\n[P] Provider");
+						
+					c0 = scan1.nextLine().charAt(0);
+					
+					switch(c0) {
+						case 'U':
+						case 'u':System.out.println("User");
+							break;
+							
+						case 'A':
+						case 'a':System.out.println("Admin");
+							break;	
+							
+						case 'P':
+						case 'p':System.out.println("Provider");
+							break;
+							
+						default:System.out.println("None");
+					}
+				
 			}
 			else {
 				System.out.println("Thanks for using our application, have a nice day!");
