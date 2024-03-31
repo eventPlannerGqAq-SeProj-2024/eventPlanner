@@ -8,6 +8,7 @@ import java.util.*;
 import static org.junit.Assert.*;
 import org.junit.*;
 import event.Planner.eventPlannerApp;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -32,7 +33,7 @@ public class SignupSteps {
 	
 	public SignupSteps(){
 		app = eventPlannerApp.createApp();
-		app.setLists();
+		//app.setLists();
 		
 		user = new User();
 		admin = new Admin();
@@ -48,13 +49,14 @@ public class SignupSteps {
 		scan = new Scanner(System.in);
 		
 		
-	}
-	
+	}	
 	
 	//User scenario:
 	@Given("user enters valid  data as user {string} {string} {string} {string} {string} {string}")
 	public void userEntersValidDataAsUser(String n, String u, String e, String bd, String g, String p) {
 	    // Write code here that turns the phrase above into concrete actions
+		app.setLists();
+		
 		n = "Ahmad";
 		u = "Ahm@d33";
 		e = "ahmad@gmail.com";
