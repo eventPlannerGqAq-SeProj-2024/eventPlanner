@@ -119,7 +119,7 @@ public class SignupSteps {
 	public void addANewUser() {
 	    // Write code here that turns the phrase above into concrete actions
 		System.out.println();
-		System.out.println("Before: ");
+		System.out.println("Users Before: ");
 		for(int i=0;i<app.Users.size();i++) {
 			System.out.println(app.Users.get(i).getName());
 		}
@@ -128,10 +128,11 @@ public class SignupSteps {
 		
 		app.Users.add(user);
 		
-		System.out.println("After: ");
+		System.out.println("Users After: ");
 		for(int i=0;i<app.Users.size();i++) {
 			System.out.println(app.Users.get(i).getName());
 		}
+		System.out.println();
 	    //throw new io.cucumber.java.PendingException();
 	}
 	
@@ -182,7 +183,7 @@ public class SignupSteps {
 		public void addANewAdmin() {
 		    // Write code here that turns the phrase above into concrete actions
 			System.out.println();
-			System.out.println("Before: ");
+			System.out.println("Admins Before: ");
 			for(int i=0;i<app.Admins.size();i++) {
 				System.out.println(app.Admins.get(i).getName());
 			}
@@ -192,10 +193,11 @@ public class SignupSteps {
 			app.Admins.add(admin);
 			
 			
-			System.out.println("After: ");
+			System.out.println("Admins After: ");
 			for(int i=0;i<app.Admins.size();i++) {
 				System.out.println(app.Admins.get(i).getName());
 			}
+			System.out.println();
 		    //throw new io.cucumber.java.PendingException();
 		}
 
@@ -246,7 +248,7 @@ public class SignupSteps {
 		public void addANewProvider() {
 		    // Write code here that turns the phrase above into concrete actions
 			System.out.println();
-			System.out.println("Before: ");
+			System.out.println("Providers Before: ");
 			for(int i=0;i<app.Providers.size();i++) {
 				System.out.println(app.Providers.get(i).getName());
 			}
@@ -255,10 +257,11 @@ public class SignupSteps {
 			
 			app.Providers.add(provider);
 			
-			System.out.println("After: ");
+			System.out.println("Providers After: ");
 			for(int i=0;i<app.Providers.size();i++) {
 				System.out.println(app.Providers.get(i).getName());
 			}
+			System.out.println();
 		    //throw new io.cucumber.java.PendingException();
 		}
 	

@@ -99,8 +99,7 @@ public class eventPlannerApp {
 			venues.get(i).setID(Integer.toString(i+1));
 			venues.get(i).setlocation("location"+Integer.toString(i+1));
 		
-			//Commented GQ due to some errors:
-			//events.add(new event("event"+Integer.toString(i+1),venues.get(i),Integer.toString(i+1)+"/"+Integer.toString(i+1)+"/2024","00","00",100));
+			events.add(new event("event"+Integer.toString(i+1),venues.get(i),Integer.toString(i+1)+"/"+Integer.toString(i+1)+"/2024","00","00",100));
 			
 		}
 	}
