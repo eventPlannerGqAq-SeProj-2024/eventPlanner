@@ -4,7 +4,7 @@ Feature: Adding a new event for a specific user
   Actor: User
 
   Scenario: user enters complete data on unbooked date
-    And User selected add a new event option 
+    Given User selected add a new event option 
     And User enters all details for the event
 
    

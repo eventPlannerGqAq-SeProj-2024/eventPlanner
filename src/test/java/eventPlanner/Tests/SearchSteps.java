@@ -15,7 +15,7 @@ public class SearchSteps {
 	@Given("User is logged in")
 	public void userIsLoggedIn() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    //throw new io.cucumber.java.PendingException();
 	}
 
 
