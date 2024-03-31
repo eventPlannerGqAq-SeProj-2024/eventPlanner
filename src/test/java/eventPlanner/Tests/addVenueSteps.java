@@ -10,7 +10,7 @@ import io.cucumber.java.en.Then;
 
 
 public class addVenueSteps {
-	Provider p= new Provider("user","pass","prov", "email", "1/1/2000",'m',true);
+	Provider p= new Provider("user","pass","prov", "email", "1/1/2000",'m',true,"type");
 	public  ArrayList<venue> venues = new ArrayList<venue>();
 	venue v1;
 	@Given("information is correct")

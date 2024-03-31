@@ -20,7 +20,7 @@ public class addEventUserSteps {
 //	boolean unbooked;
 //	boolean addeventselected;
 //	boolean completedata;
-	Provider p= new Provider("user","pass","prov", "email", "1/1/2000",'m',true);
+	Provider p= new Provider("user","pass","prov", "email", "1/1/2000",'m',true,"type");
 	venue v1 = new venue("010","venue1","nablus",100,100, 100, p);
 	
 	public addEventUserSteps() {
