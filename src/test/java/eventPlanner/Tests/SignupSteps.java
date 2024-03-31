@@ -22,6 +22,7 @@ public class SignupSteps {
 	boolean isValid;
 	boolean confirm;
 	
+	
 	boolean isUser;
 	boolean isAdmin;
 	boolean isProvider;
@@ -54,7 +55,10 @@ public class SignupSteps {
 	@Given("user enters valid  data as user {string} {string} {string} {string} {string} {string}")
 	public void userEntersValidDataAsUser(String n, String u, String e, String bd, String g, String p) {
 	    // Write code here that turns the phrase above into concrete actions
-		System.out.print("Name: ");n = scan.nextLine();
+		
+		
+		
+		/*System.out.print("Name: ");n = scan.nextLine();
 		user.setName(n);
 		
 		System.out.print("Username: ");u = scan.nextLine();
@@ -70,7 +74,7 @@ public class SignupSteps {
 		user.setGender(g.charAt(0));
 		
 		System.out.print("Password: ");p = scan.nextLine();
-		user.setPassword(p);		
+		user.setPassword(p);*/		
 		
 		isValid = true;
 		assertTrue("The data entered are not valid",isValid);
