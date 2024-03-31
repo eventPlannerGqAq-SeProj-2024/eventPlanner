@@ -1,8 +1,8 @@
 package event.Planner;
 
 public class Provider extends User{
-	private String type;
-	public Provider(String u,String p,String n, String e, String b, char g,boolean l,String t) {
+	
+	public Provider(String u,String p,String n, String e, String b, char g,boolean l) {
 		super.setUsername(u);
 		super.setPassword(p);
 		super.setName(n);
@@ -10,7 +10,6 @@ public class Provider extends User{
 		super.setBday(b);
 		super.setGender(g);
 		super.setLogged(l);
-		type =t;
 	}
 	public Provider() {}
 }
