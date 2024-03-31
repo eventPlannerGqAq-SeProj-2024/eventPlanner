@@ -19,7 +19,7 @@ public class loginSteps {
 		
 		app = eventPlannerApp.createApp();
 		
-		app.setLists();
+		//app.setLists();
 		
 		scan = new Scanner(System.in);
 		
@@ -36,6 +36,8 @@ public class loginSteps {
 	@Given("that the admin is not logged in")
 	public void thatTheAdminIsNotLoggedIn() {
 	    // Write code here that turns the phrase above into concrete actions
+		app.setLists();
+		
 		isLoggedA = false;
 		assertFalse("The admin is already logged in",isLoggedA);
 	    //throw new io.cucumber.java.PendingException();
