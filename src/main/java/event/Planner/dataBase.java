@@ -10,38 +10,37 @@ public class dataBase {
 	public  ArrayList<User> Users = new ArrayList<User>();
 	public  ArrayList<Provider> Providers = new ArrayList<Provider>();
 	
+	public User newU = new User();
+	public Admin newA = new Admin();
+	public Provider newP = new Provider();
+	
 	//new
 	public  ArrayList<event> events = new ArrayList<event>();
 	public  ArrayList<venue> venues = new ArrayList<venue>();
 	//new
 	public static dataBase app;
+	boolean done = false;
+	
+	public static char whoLogged = '\0';
 	
 	public static dataBase createApp() {
 		if(app == null)app = new dataBase();
 		return app;
 	}
-	
-	public int getMaxSizeList() {
-		int size = Users.size();
-		if(Users.size() > Admins.size() && Users.size() > Providers.size())return Users.size();
-		else if(Admins.size() > Users.size() && Admins.size() > Providers.size())return Admins.size();
-		else if(Providers.size() > Users.size() && Providers.size() > Admins.size())return Providers.size();
-		return size;
-	}
 		
 	public void setLists() {
+		if(done) {
+			return;
+		}
+		
+		done = true;
+		
 		for(int i=0;i<6;i++) {
 			Admins.add(new Admin());
 			Users.add(new User());
 			Providers.add(new Provider());
 			venues.add(new venue());
 		}
-		/*
-		Admins.get(0).setUsername("1A");
-		Admins.get(1).setUsername("2A");
-		Admins.get(2).setUsername("3A");
-		Admins.get(3).setUsername("user name");
-		*/
 		
 		Users.get(0).setName("Ahmad");
 		Users.get(1).setName("Ali");
@@ -63,26 +62,7 @@ public class dataBase {
 		Providers.get(3).setName("Fatemah");
 		Providers.get(4).setName("Sohair");
 		Providers.get(5).setName("Isa");
-		/*
-		Providers.get(0).setUsername("1P");
-		Providers.get(1).setUsername("2P");
-		Providers.get(2).setUsername("3P");
-		
-		Admins.get(0).setPassword("admin1");
-		Admins.get(1).setPassword("admin2");
-		Admins.get(2).setPassword("admin3");
-		Admins.get(3).setPassword("password");
-		
-		Users.get(0).setPassword("user1");
-		Users.get(1).setPassword("user2");
-		Users.get(2).setPassword("user3");
-		
-		Providers.get(0).setPassword("provider1");
-		Providers.get(1).setPassword("provider2");
-		Providers.get(2).setPassword("provider3");
-		*/
-		 //String name,venue venue,String date,String theme,String description,int attendee_count
-		  
+				  
 		for (int i=0;i<6;i++)
 		{
 			Admins.get(i).setUsername(Integer.toString(i+1)+"A");
@@ -103,6 +83,7 @@ public class dataBase {
 			
 		}
 	}
+	
 	public void userAddEvent()
 	{
 		int i=venues.size();
@@ -140,17 +121,25 @@ public class dataBase {
 	}
 	public boolean checkPass(String username,String pass) {
 		
-		for(int i=0;i<getMaxSizeList();i++) {
+		for(int i=0;i<Admins.size();i++) {
 			if(Admins.get(i).getUsername().equals(username) && Admins.get(i).getPass().equals(pass)) {
 				Admins.get(i).setLogged(true);
+				whoLogged = 'A';
 				return true;
 			}
-			else if(Users.get(i).getUsername().equals(username) && Users.get(i).getPass().equals(pass)) {
+		}
+		
+		for(int i=0;i<Users.size();i++) {
+			if(Users.get(i).getUsername().equals(username) && Users.get(i).getPass().equals(pass)) {
 				Users.get(i).setLogged(true);
+				whoLogged = 'U';
 				return true;
 			}
-			else if(Providers.get(i).getUsername().equals(username) && Providers.get(i).getPass().equals(pass)) {
+				}
+		for(int i=0;i<Providers.size();i++) {
+			if(Providers.get(i).getUsername().equals(username) && Providers.get(i).getPass().equals(pass)) {
 				Providers.get(i).setLogged(true);
+				whoLogged = 'P';
 				return true;
 			}
 		}
@@ -159,11 +148,23 @@ public class dataBase {
 	
 	public String getLoggedRoleName() {
 		String name = "";
-		for(int i=0;i<app.getMaxSizeList();i++) {
-			if(app.Users.get(i).isLogged())name = app.Users.get(i).getName();
-			if(app.Admins.get(i).isLogged())name = app.Admins.get(i).getName();
-			if(app.Providers.get(i).isLogged())name = app.Providers.get(i).getName();
+		
+		for(int i=0;i<app.Users.size();i++) {
+			if(app.Users.get(i).isLogged()) {
+				name = app.Users.get(i).getName();
+			}
 		}
+		for(int i=0;i<app.Admins.size();i++) {
+			if(app.Admins.get(i).isLogged()) {
+				name = app.Admins.get(i).getName();
+			}
+				}
+		for(int i=0;i<app.Providers.size();i++) {
+			if(app.Providers.get(i).isLogged()) {
+				name = app.Providers.get(i).getName();
+			}	
+		}			
+			
 		return name;
 	}	
 }
