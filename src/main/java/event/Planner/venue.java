@@ -102,6 +102,14 @@ public class venue {
 				 System.out.printf(",");
 		 }
 	}
+  public void viewcalendar()
+ 	{
+ 	  System.out.println("Booked dates:");
+ 		for(int i=Booked.size();i>0;i--)
+ 		{	
+ 			 System.out.println(Booked.get(i-1));
+ 		 }
+ 	}
   public ArrayList<String> getAmenities() {
 		return Amenities;
 	};
