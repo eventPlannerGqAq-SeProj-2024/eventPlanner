@@ -3,13 +3,15 @@ package eventPlanner.Tests;
 import java.util.*;
 import static org.junit.Assert.*;
 import org.junit.*;
+
+import event.Planner.dataBase;
 import event.Planner.eventPlannerApp;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class loginSteps {
 		
-	eventPlannerApp app;
+	dataBase app;
 	boolean isLoggedA;
 	boolean isLoggedU;
 	boolean isLoggedP;
@@ -17,7 +19,7 @@ public class loginSteps {
 	Scanner scan;
 	public loginSteps() {
 		
-		app = eventPlannerApp.createApp();
+		app = dataBase.createApp();
 		
 		//app.setLists();
 		

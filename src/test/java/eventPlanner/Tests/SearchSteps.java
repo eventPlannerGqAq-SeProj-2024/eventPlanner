@@ -1,15 +1,16 @@
 package eventPlanner.Tests;
 
+import event.Planner.dataBase;
 import event.Planner.eventPlannerApp;
 import org.junit.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class SearchSteps {
-	eventPlannerApp app;
+	dataBase app;
 	
 	public SearchSteps() {
-		app = eventPlannerApp.createApp();
+		app = dataBase.createApp();
 		
 	}
 	@Given("User is logged in")
