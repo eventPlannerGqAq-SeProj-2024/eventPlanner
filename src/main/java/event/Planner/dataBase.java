@@ -146,6 +146,70 @@ public class dataBase {
 		return false;
 	}
 	
+	public User getLoggedUser() {
+		for(int i=0;i<app.Users.size();i++) {
+			if(app.Users.get(i).isLogged()) {
+				return app.Users.get(i);
+			}
+		}
+			return null;
+	}
+	
+	public Admin getLoggedAdmin() {
+		for(int i=0;i<app.Admins.size();i++) {
+			if(app.Admins.get(i).isLogged()) {
+				return app.Admins.get(i);
+			}
+		}
+			return null;
+	}
+	
+	public Provider getLoggedProvider() {
+		for(int i=0;i<app.Providers.size();i++) {
+			if(app.Providers.get(i).isLogged()) {
+				return app.Providers.get(i);
+			}
+		}
+			return null;
+	}
+	
+	public ArrayList<String> getLoggedDetails() {
+		ArrayList <String> d = new ArrayList<String>();
+		
+		for(int i=0;i<app.Users.size();i++) {
+			if(app.Users.get(i).isLogged()) {
+				d.add(app.Users.get(i).getName());
+				d.add(app.Users.get(i).getUsername());
+				d.add(app.Users.get(i).getEmail());
+				d.add(app.Users.get(i).getBday());
+				d.add(Character.toString(app.Users.get(i).getGender()));
+				d.add(app.Users.get(i).getPass());
+			}
+		}
+		for(int i=0;i<app.Admins.size();i++) {
+			if(app.Admins.get(i).isLogged()) {
+				d.add(app.Admins.get(i).getName());
+				d.add(app.Admins.get(i).getUsername());
+				d.add(app.Admins.get(i).getEmail());
+				d.add(app.Admins.get(i).getBday());
+				d.add(Character.toString(app.Admins.get(i).getGender()));
+				d.add(app.Admins.get(i).getPass());
+			}
+				}
+		for(int i=0;i<app.Providers.size();i++) {
+			if(app.Providers.get(i).isLogged()) {
+				d.add(app.Providers.get(i).getName());
+				d.add(app.Providers.get(i).getUsername());
+				d.add(app.Providers.get(i).getEmail());
+				d.add(app.Providers.get(i).getBday());
+				d.add(Character.toString(app.Providers.get(i).getGender()));
+				d.add(app.Providers.get(i).getPass());
+			}	
+		}		
+		
+		return d;
+	}
+	
 	public String getLoggedRoleName() {
 		String name = "";
 		
