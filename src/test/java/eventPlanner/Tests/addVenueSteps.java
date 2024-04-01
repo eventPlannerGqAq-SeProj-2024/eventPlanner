@@ -16,7 +16,7 @@ public class addVenueSteps {
 	
 	public addVenueSteps(){
 		app = dataBase.createApp();
-		p= new Provider("user","pass","prov", "email", "1/1/2000",'m',true);
+		p= new Provider("user","pass","prov", "email", "1/1/2000",'m',true,"type");
 		venues = new ArrayList<venue>();
 	}
 	@Given("information is correct")

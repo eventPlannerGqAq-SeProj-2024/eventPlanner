@@ -156,5 +156,105 @@ public class event {
 	public ArrayList<String> getGuestlist() {
 		return Guestlist;
 	};
-	
+	public void manageEvent()//tring name,venue venue,String date,String theme,String description,int attendee_count
+	{   Scanner scan = new Scanner (System.in);
+		System.out.println("choose what detail you want to change:");
+		System.out.println("1.name");
+		System.out.println("2.date");
+		System.out.println("3.theme");
+		System.out.println("4.description");
+		System.out.println("5.attendee count");
+		int cases= scan.nextInt();
+		String edit;
+		switch(cases)
+		{
+		case 1:
+		{
+			System.out.println("enter new name:");
+			Name=scan.next();
+			System.out.println("change successful!");
+		}
+		case 2:
+		{
+			System.out.println("enter new date:");
+			edit=scan.next();
+			if(Venue.checkIfDateIsBooked(edit))
+			{
+				System.out.println("that date is booked");
+			}
+			else {Date=edit;
+			System.out.println("change successful!");
+			}
+		}
+		case 3:
+		{
+			System.out.println("enter new theme:");
+			Theme=scan.next();
+			System.out.println("change successful!");
+		}
+		case 4:
+		{
+			System.out.println("enter new description:");
+			Description=scan.next();
+			System.out.println("change successful!");
+		}
+		case 5:
+		{
+			System.out.println("enter new attendee count:");
+			Attendee_count=scan.nextInt();
+			System.out.println("change successful!");
+		}
+		}
+		
+	}
+	public void manageEventTest(int cases, String edit,int count)//tring name,venue venue,String date,String theme,String description,int attendee_count
+	{   //Scanner scan = new Scanner (System.in);
+		System.out.println("choose what detail you want to change:");
+		System.out.println("1.name");
+		System.out.println("2.date");
+		System.out.println("3.theme");
+		System.out.println("4.description");
+		System.out.println("5.attendee count");
+		//int cases= scan.nextInt();
+		//String edit;
+		switch(cases)
+		{
+		case 1:
+		{
+			System.out.println("enter new name:");
+			Name=edit;
+			System.out.println("change successful!");
+		}
+		case 2:
+		{
+			System.out.println("enter new date:");
+			if(Venue.checkIfDateIsBooked(edit))
+			{
+				System.out.println("that date is booked");
+			}
+			else {Date=edit;
+			System.out.println("change successful!");
+			}
+		}
+		case 3:
+		{
+			System.out.println("enter new theme:");
+			Theme=edit;
+			System.out.println("change successful!");
+		}
+		case 4:
+		{
+			System.out.println("enter new description:");
+			Description=edit;
+			System.out.println("change successful!");
+		}
+		case 5:
+		{
+			System.out.println("enter new attendee count:");
+			Attendee_count=count;
+			System.out.println("change successful!");
+		}
+		}
+		
+	}
 }
