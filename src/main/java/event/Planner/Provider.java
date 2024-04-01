@@ -11,7 +11,7 @@ public class Provider extends User{
 		super.setBday(b);
 		super.setGender(g);
 		super.setLogged(l);
-		type =t;
+		type = t;
 	}
 	public Provider() {
 		super();

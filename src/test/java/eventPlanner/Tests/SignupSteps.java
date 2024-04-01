@@ -15,7 +15,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class SignupSteps {
-	dataBase app;
+	static dataBase app;
 	
 	User user;
 	Admin admin;
@@ -23,6 +23,7 @@ public class SignupSteps {
 		
 	boolean isValid;
 	boolean confirm;
+	static boolean setupDone;
 	
 	
 	boolean isUser;
@@ -34,6 +35,7 @@ public class SignupSteps {
 	
 	public SignupSteps(){
 		app = dataBase.createApp();
+		setupDone = false;
 		//app.setLists();
 		
 		user = new User();
@@ -48,7 +50,6 @@ public class SignupSteps {
 		roleSelected = false;
 		
 		//scan = new Scanner(System.in);
-		
 		
 	}	
 	
@@ -108,11 +109,30 @@ public class SignupSteps {
 	@Then("check if email and date are valid {string} {string}")
 	public void checkIfEmailAndDateAreValid(String e, String d) {
 	    // Write code here that turns the phrase above into concrete actions
-		e = user.getEmail();
-		d = user.getBday();
+		if(isUser) {
+			e = user.getEmail();
+			d = user.getBday();
+		}
 		
-		assertTrue("Entered email is not valid",user.isValidEmail(e));
-		assertTrue("Entered date is not valid",user.isValidDate(d));
+		if(isAdmin) {
+			e = admin.getEmail();
+			d = admin.getBday();
+		}
+		
+		if(isProvider) {
+			e = provider.getEmail();
+			d = provider.getBday();
+		}
+		
+		if(isValid) {
+			assertTrue("Entered email is not valid",user.isValidEmail(e));
+			assertTrue("Entered date is not valid",user.isValidDate(d));
+		}
+		else {
+			assertFalse("Entered email is not valid",user.isValidEmail(e));
+			assertFalse("Entered date is not valid",user.isValidDate(d));
+		}
+		
 	    //throw new io.cucumber.java.PendingException();
 	}
 	
@@ -208,7 +228,7 @@ public class SignupSteps {
 		    // Write code here that turns the phrase above into concrete actions
 			n = "Ali";
 			u = "Ali03";
-			e = "Ali@gmail.com";
+			e = "AliHusam@gmail.com";
 			bd = "11/11/1999";
 			g = "M";
 			p = "AAAA";

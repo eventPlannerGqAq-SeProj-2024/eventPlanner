@@ -119,9 +119,9 @@ public class loginSteps {
 	    // Write code here that turns the phrase above into concrete actions
 				//username = scan.nextLine();
 				//pass = scan.nextLine();
-			username = "2U";
-			pass = "user2";
-				if(isLoggedA == false) {
+			username = "5U";
+			pass = "user5";
+				if(isLoggedU == false) {
 					assertTrue("wrong username or password",app.checkPass(username,pass));
 				}
 		//throw new io.cucumber.java.PendingException();
@@ -148,8 +148,8 @@ public class loginSteps {
 		//username = scan.nextLine();
 		//pass = scan.nextLine();
 		
-		username = "2U";
-		pass = "user1";
+		username = "U2";
+		pass = "user2";
 		
 		if(isLoggedU == false) {
 			assertFalse("Correct ceredentails were entered",app.checkPass(username,pass));
@@ -189,7 +189,7 @@ public class loginSteps {
 				
 		username = "3P";
 		pass = "provider3";
-				if(isLoggedA == false) {
+				if(isLoggedP == false) {
 					assertTrue("wrong username or password",app.checkPass(username,pass));
 				}
 		//throw new io.cucumber.java.PendingException();
