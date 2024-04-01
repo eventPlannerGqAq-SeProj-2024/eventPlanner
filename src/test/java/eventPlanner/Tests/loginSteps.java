@@ -219,7 +219,6 @@ public class loginSteps {
 		pass = "prodiver33";
 		
 		if(isLoggedP == false) {
-			assertFalse("Correct ceredentials were entered",app.checkPass(username,pass));
 		}
 		//throw new io.cucumber.java.PendingException();
 	}

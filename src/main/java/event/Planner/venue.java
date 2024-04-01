@@ -8,6 +8,7 @@ public class venue {
   private Provider provider;
   private ArrayList<String> Amenities = new ArrayList<String>();
   private int Capacity =100, Price= 100,Area =1000;
+  private double Rating =0;
   private ArrayList<String> Booked = new ArrayList<String>();
   public venue(String i,String n,String l,int c,int a, int p,Provider pr)
   {
@@ -34,7 +35,7 @@ public class venue {
 	    ID = "000";
 		Name = "000";
 		location= "000";
-		provider=null;
+		provider= new Provider();
 	//	Area = 1000;
 	//	Booked = false;
 	//	Price = 100;
@@ -102,6 +103,14 @@ public class venue {
 				 System.out.printf(",");
 		 }
 	}
+  public void viewcalendar()
+ 	{
+ 	  System.out.println("Booked dates:");
+ 		for(int i=Booked.size();i>0;i--)
+ 		{	
+ 			 System.out.println(Booked.get(i-1));
+ 		 }
+ 	}
   public ArrayList<String> getAmenities() {
 		return Amenities;
 	};
@@ -182,5 +191,15 @@ public class venue {
 	   new event(name,this,date,theme,description,attendee_count);
   	
   	}
+  public void viewVenue()
+  { 
+	  System.out.printf("%n{ID: %s,",ID);
+	  System.out.printf("name: %s,",Name);
+	  System.out.printf("provider: %s,",provider.getName());
+	  System.out.printf("capacity: %d,",Capacity);
+	  System.out.printf("price: %d,",Price);
+	  System.out.printf("area: %d}",Area);
+		
+  }
 }
 
