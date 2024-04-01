@@ -10,9 +10,16 @@ import io.cucumber.java.en.Then;
 
 
 public class addVenueSteps {
-	Provider p= new Provider("user","pass","prov", "email", "1/1/2000",'m',true);
-	public  ArrayList<venue> venues = new ArrayList<venue>();
+	dataBase app;
+	Provider p;
+	public  ArrayList<venue> venues;
 	venue v1;
+	
+	public addVenueSteps(){
+		app = dataBase.createApp();
+		p= new Provider("user","pass","prov", "email", "1/1/2000",'m',true);
+		venues = new ArrayList<venue>();
+	}
 	@Given("information is correct")
 	public void InformationIsCorrect() {
 	    // Write code here that turns the phrase above into concrete actions
@@ -22,8 +29,9 @@ public class addVenueSteps {
 	@Given("information is incorrect")
 	public void InformationIsIncorrect() {		
 	    // Write code here that turns the phrase above into concrete actions
-		Scanner scan = new Scanner(System.in);
-		int q = scan.nextInt();
+		/*Scanner scan = new Scanner(System.in);
+		int q = scan.nextInt();*/
+		int q = 120;//Some example value
 		 v1 = new venue("010","venue1","nablus",q,100, 100, p);
 		//throw new io.cucumber.java.PendingException();
 	}

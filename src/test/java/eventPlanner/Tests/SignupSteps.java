@@ -3,6 +3,7 @@ package eventPlanner.Tests;
 import event.Planner.Admin;
 import event.Planner.Provider;
 import event.Planner.User;
+import event.Planner.dataBase;
 import event.Planner.eventPlannerApp;
 import java.util.*;
 import static org.junit.Assert.*;
@@ -14,7 +15,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class SignupSteps {
-	eventPlannerApp app;
+	dataBase app;
 	
 	User user;
 	Admin admin;
@@ -29,10 +30,10 @@ public class SignupSteps {
 	boolean isProvider;
 	
 	boolean roleSelected;
-	Scanner scan;
+	//Scanner scan;
 	
 	public SignupSteps(){
-		app = eventPlannerApp.createApp();
+		app = dataBase.createApp();
 		//app.setLists();
 		
 		user = new User();
@@ -46,7 +47,7 @@ public class SignupSteps {
 		isProvider = false;
 		roleSelected = false;
 		
-		scan = new Scanner(System.in);
+		//scan = new Scanner(System.in);
 		
 		
 	}	

@@ -13,18 +13,19 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class addEventUserSteps {
-	eventPlannerApp app;
+	dataBase app;
 	public boolean isLoggedU;
 	
 //	Scanner scan;
 //	boolean unbooked;
 //	boolean addeventselected;
 //	boolean completedata;
+	
 	Provider p= new Provider("user","pass","prov", "email", "1/1/2000",'m',true);
 	venue v1 = new venue("010","venue1","nablus",100,100, 100, p);
 	
 	public addEventUserSteps() {
-		app = eventPlannerApp.createApp();
+		app = dataBase.createApp();
 		isLoggedU = false;
 		v1.addEvent("event1","1/1/2024","theme1","desc1",100);
 	//    unbooked=true;
@@ -43,7 +44,7 @@ public class addEventUserSteps {
 	@Given("User enters all details for the event")
 	public void userEntersAllDetailsForTheEvent() {
 	    // Write code here that turns the phrase above into concrete actions
-		v1.addEvent();//"event2","1/2/2024","theme2","desc2",100);//String name,String date,String theme,String description,int attendee_count
+		v1.addEvent("event2","1/2/2024","theme2","desc2",100);//String name,String date,String theme,String description,int attendee_count
 		
 		//throw new io.cucumber.java.PendingException();
 	}
@@ -81,7 +82,8 @@ public class addEventUserSteps {
 	public void user_tries_again() {
 	    // Write code here that turns the phrase above into concrete actions
 	  //  throw new io.cucumber.java.PendingException();
-		v1.addEvent();
+		//v1.addEvent();
+		v1.addEvent("event3","1/1/2024","theme2","desc2",100);
 	}
 
 	
