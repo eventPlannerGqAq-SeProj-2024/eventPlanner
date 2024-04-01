@@ -13,7 +13,9 @@ public class Provider extends User{
 		super.setLogged(l);
 		type =t;
 	}
-	public Provider() {}
+	public Provider() {
+		super();
+	}
 	public String getType()
 	{
 		return type;

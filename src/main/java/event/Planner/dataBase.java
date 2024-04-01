@@ -166,4 +166,40 @@ public class dataBase {
 		}
 		return name;
 	}	
+	public void deleteUserAccount(User u) 
+	{
+		Users.remove(u);
+	}
+	public void filterVenuesByPrice(int p)
+	{
+		for(int i=venues.size()-1;i>0;i--)
+		  {
+			 if(venues.get(i).getPrice()>=p)
+				 venues.get(i).viewVenue();
+		  }
+	};
+	public void filterVenuesByArea(int p)
+	{
+		for(int i=venues.size()-1;i>0;i--)
+		  {
+			 if(venues.get(i).getArea()<=p)
+				 venues.get(i).viewVenue();
+		  }
+	};
+	public void filterVenuesByCapacity(int p)
+	{
+		for(int i=venues.size()-1;i>0;i--)
+		  {
+			 if(venues.get(i).getCapacity()<=p)
+				 venues.get(i).viewVenue();
+		  }
+	};
+	public void filterVenuesByUnbookedDate(String d)
+	{
+		for(int i=venues.size()-1;i>0;i--)
+		  {
+			 if(!venues.get(i).checkIfDateIsBooked(d))
+				 venues.get(i).viewVenue();
+		  }
+	};
 }
