@@ -32,7 +32,6 @@ public class eventPlannerApp {
 			showMainMenu();
 			
 			choice = scan1.next().charAt(0);
-			
 			scan1.nextLine(); // to consume left over line
 			
 			System.out.println("======================================================");
@@ -42,7 +41,6 @@ public class eventPlannerApp {
 					
 					System.out.print("Please enter your username here: ");		
 					username =scan1.nextLine();
-					System.out.println();
 					
 					System.out.print("now please enter your password here: ");
 					pass =scan1.nextLine();
@@ -53,6 +51,9 @@ public class eventPlannerApp {
 						System.out.println("======================================================");
 						System.out.println("Welcome " + app.getLoggedRoleName() + ", nice to meet you again");
 						System.out.println("======================================================");
+						
+						
+						
 					}
 					else {
 						System.out.println("Wrong username or password, would you like to try again? (enter [Y/y] for yes)");
