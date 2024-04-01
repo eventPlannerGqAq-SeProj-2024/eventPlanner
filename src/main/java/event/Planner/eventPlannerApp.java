@@ -8,6 +8,18 @@ public class eventPlannerApp {
 	
 	//public static char continueChoice = '\0';
 	
+	public static void showUserMenu() {
+		System.out.println("User");
+	}
+	
+	public static void showAdminMenu() {
+		System.out.println("Admin");
+		}
+	
+	public static void showProviderMenu() {
+		System.out.println("Provider");
+	}
+	
 	public static void showSignup() throws InterruptedException {
 		char c0 = '\0';
 		char c1 = '\0';
@@ -69,17 +81,17 @@ public class eventPlannerApp {
 				//User menu:
 				if(dataBase.whoLogged == 'U') {
 					//to be implemented
-					System.out.println("User");
+					showUserMenu();
 				}
 				//Administrator menu:
 				else if(dataBase.whoLogged == 'A') {
 					//to be implemented
-					System.out.println("Admin");
+					showAdminMenu();
 				}
 				//Provider menu:
 				else if(dataBase.whoLogged == 'P') {
 					//to be implemented
-					System.out.println("Provider");
+					showProviderMenu();
 				}
 				
 				
@@ -103,6 +115,7 @@ public class eventPlannerApp {
 		char c0 = '\0';
 		char c1 = '\0';
 		
+		System.out.print("Enter your choice here: ");
 		c0 = scan.nextLine().charAt(0);
 		System.out.println("======================================================");
 		
