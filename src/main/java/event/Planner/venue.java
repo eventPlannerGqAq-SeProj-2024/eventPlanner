@@ -130,15 +130,17 @@ public class venue {
   //returns true if booked and false if free
   public boolean checkIfDateIsBooked(String date)
   {
-	  if(Booked.isEmpty())
-	  return false;
+	  if(Booked.isEmpty()) {
+		  return false;
+	  }
 	  
 	  boolean booked=false;
 	  
 	  for(int i=Booked.size()-1;i>0;i--)
 	  {
-		  if(date.equals(Booked.get(i)))
-		  booked=true;
+		  if(date.equals(Booked.get(i))) {
+			  booked = true;
+		  }
 	  }
 	  return booked;
   }
