@@ -4,35 +4,35 @@ Feature: Managing a birthday for a specific user by the provider
   Actor: Provider
 
   @tag1
-  Scenario: Managing event name
-    Given Provider chooses to change name
-    And 	Provider enters new name to replace old name
-    Then Provider changes name successfully
+  Scenario: Managing event nameb
+    Given Provider chooses to change nameb
+    And 	Provider enters new name to replace old nameb
+    Then Provider changes name successfullyb
 
-   Scenario: Managing event Date unbooked
-    Given Provider chooses to change Date
-    And 	Provider enters new unbooked Date to replace old Date
-    Then Provider changes Date successfully
+   Scenario: Managing event Date unbookedb
+    Given Provider chooses to change Dateb
+    And 	Provider enters new unbooked Date to replace old Dateb
+    Then Provider changes Date successfullyb
 
-   Scenario: Managing event Date booked
-    Given Provider chooses to change Date
-    And 	Provider enters new booked Date to replace old Date
-    Then Provider doesnt changes Date
+   Scenario: Managing event Date bookedb
+    Given Provider chooses to change Dateb
+    And 	Provider enters new booked Date to replace old Dateb
+    Then Provider doesnt changes Dateb
     
-   Scenario: Managing event theme
-    Given Provider chooses to change theme
-    And 	Provider enters new theme to replace old theme
-    Then Provider changes theme successfully
+   Scenario: Managing event themeb
+    Given Provider chooses to change themeb
+    And 	Provider enters new theme to replace old themeb
+    Then Provider changes theme successfullyb
     
-   Scenario: Managing event description
-    Given Provider chooses to change description
-    And 	Provider enters new description to replace old description
-    Then Provider changes description successfully
+   Scenario: Managing event descriptionb
+    Given Provider chooses to change descriptionb
+    And 	Provider enters new description to replace old descriptionb
+    Then Provider changes description successfullyb
     
-    Scenario: Managing event attendee count
-    Given Provider chooses to change attendee count
-    And 	Provider enters new attendee count to replace old attendee count
-    Then Provider changes attendee count successfully
+    Scenario: Managing event attendee countb
+    Given Provider chooses to change attendee countb
+    And 	Provider enters new attendee count to replace old attendee countb
+    Then Provider changes attendee count successfullyb
     
     Scenario: Managing event age
     Given Provider chooses to change age

@@ -14,13 +14,14 @@ public class birthdaySettersAndGettersSteps {
 	venue v2;
 	Provider p= new Provider("user","pass","prov", "email", "1/1/2000",'m',true,"type");
 	venue v1 = new venue("010","venue1","nablus",100,100, 100, p);
-	birthday e = new birthday("event1",v1,"1/1/2024","theme1","desc1",100,1,"cake","celebname");	
+	birthday e = new birthday();	
 	public birthdaySettersAndGettersSteps() {		
 	}
 	@Given("Age setter is used to change Age")
 	public void age_setter_is_used_to_change_age() {
 	    // Write code here that turns the phrase above into concrete actions
 	  //  throw new io.cucumber.java.PendingException();
+		e = new birthday("event1",v1,"1/1/2024","theme1","desc1",100,1,"cake","celebname");	
 		count=10;
 	}
 
