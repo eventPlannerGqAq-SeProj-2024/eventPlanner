@@ -8,7 +8,6 @@ public class venue {
   private Provider provider;
   private ArrayList<String> Amenities = new ArrayList<String>();
   private int Capacity =100, Price= 100,Area =1000;
-  //private double Rating =0;
   private ArrayList<String> Booked = new ArrayList<String>();
   public venue(String i,String n,String l,int c,int a, int p,Provider pr)
   {
@@ -21,25 +20,13 @@ public class venue {
 	  Area =a;
 	  provider=pr;
   }
-  /*public venue(String n,String l,int c,int a, int p,Provider pr)
-  {
-	  Name =n;
-	  location =l;
-	  Capacity =c;
-	  Price =p;	
-	  Area =a;
-	  provider=pr;
-  }*/
+  
   public venue()
   {
 	    ID = "000";
 		Name = "000";
 		location= "000";
 		provider= new Provider();
-	//	Area = 1000;
-	//	Booked = false;
-	//	Price = 100;
-	//	Capacity = 100;	
   }
   public void setName(String p) 
   {
@@ -95,12 +82,9 @@ public class venue {
   {
 	    if(provname.equals(provider.getName()))
 	    {
-	   // String Amenity;
-		//Scanner input = new Scanner(System.in);
 		System.out.println("enter Amenity names:(type 'done' to finish)");
 		int i=0;
 		while(true){
-			//Amenity= input.nextLine();
 			if(Amenity[i].equals("done"))
 				break;
 			Amenities.add(Amenity[i]);
@@ -148,7 +132,6 @@ public class venue {
 	  return Area;
   }
   
-  //returns true if booked and false if free
   public boolean checkIfDateIsBooked(String date)
   {
 	  if(Booked.isEmpty()) {
@@ -181,36 +164,7 @@ public class venue {
   {
 	  return provider;
   }
-  /*
-  public void addEvent()//String name,String date,String theme,String description,int attendee_count)
-  {
-	  int attendee_count=1;
-	   Scanner scan = new Scanner(System.in);
-	   System.out.println("enter event name:");
-	   String name = scan.next();
-	   System.out.println("enter event date:");
-	   String date = scan.next();
-	   System.out.println("enter event theme:");
-	   String theme = scan.next();
-	   System.out.println("enter event description:");
-	   String description = scan.next();
-	   System.out.println("enter attendee count:");
-	   boolean a = true;
-	
-	   try {
-	   attendee_count = scan.nextInt();
-	   }
-	   catch(InputMismatchException ex) {
-		   System.out.println("please enter a number for attendee count:");
-		   Scanner bb = new Scanner(System.in);
-		   attendee_count = bb.nextInt();
-		   
-	   }
-	 
-	  new event(name,this,date,theme,description,attendee_count);
-  	
-  	}
-  */
+  
   public void addEvent(String name,String date,String theme,String description,int attendee_count)
   {
 	   new event(name,this,date,theme,description,attendee_count);
