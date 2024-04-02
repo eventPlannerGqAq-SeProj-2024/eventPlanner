@@ -55,9 +55,10 @@ public class birthday extends event {
 	}
 	
 	//@Override
-	public void manageEvent()
+	public void manageEvent(Scanner scan)
+	//public void manageEvent()
 	{
-		Scanner scan = new Scanner (System.in);
+		//Scanner scan = new Scanner (System.in);
 		logger.info("choose what detail you want to change:\n");
 		logger.info("1.name\n");
 		logger.info("2.date\n");
@@ -139,7 +140,7 @@ public class birthday extends event {
 		default:
 		{
 			logger.info("\nPlease try again\n\n");
-			manageEvent();
+			manageEvent(scan);
 			break;
 		}
 		}
@@ -225,7 +226,7 @@ public class birthday extends event {
 		default:
 		{
 			logger.info("\nPlease try again\n\n");
-			manageEvent();
+			manageEventTest(cases,edit,count);
 			break;
 		}
 		}

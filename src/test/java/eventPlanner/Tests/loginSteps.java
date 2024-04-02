@@ -61,7 +61,9 @@ public class loginSteps {
 	@Then("the admin log in succeeds")
 	public void theAdminLogInSucceeds() {
 	    // Write code here that turns the phrase above into concrete actions
-		isLoggedA = true;
+		isLoggedA = app.getLoggedAdmin().isLogged();
+		
+		//isLoggedA = true;
 		assertTrue("The admin is not logged in",isLoggedA);
 		System.out.println("Admin logged in successfully");
 		//throw new io.cucumber.java.PendingException();
@@ -129,7 +131,8 @@ public class loginSteps {
 	@Then("the user log in succeeds")
 	public void theUserLogInSucceeds() {
 	    // Write code here that turns the phrase above into concrete actions
-		isLoggedU = true;
+		//isLoggedU = true;
+		isLoggedU = app.getLoggedUser().isLogged();
 		assertTrue("The user is not logged in",isLoggedU);
 		System.out.println("User logged in successfully");
 		//throw new io.cucumber.java.PendingException();
@@ -197,7 +200,8 @@ public class loginSteps {
 	@Then("the planner log in succeeds")
 	public void thePlannerLogInSucceeds() {
 	    // Write code here that turns the phrase above into concrete actions
-		isLoggedP = true;
+		//isLoggedP = true;
+		isLoggedP = app.getLoggedProvider().isLogged();
 		assertTrue("The provider is not logged in",isLoggedP);
 		System.out.println("Provider logged in successfully");
 		//throw new io.cucumber.java.PendingException();

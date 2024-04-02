@@ -83,42 +83,6 @@ public class dataBase {
 			
 		}
 	}
-	
-	public void userAddEvent()
-	{
-		int i=venues.size();
-		String date;
-		for(int j=i;j>0;j--)
-		{
-			System.out.println("j"+app.venues.get(j).getName());
-		}
-		event n = new event();
-		
-		System.out.println("enter event name:");
-		n.setID(scan.next());
-		
-		n.failed=false;
-		while(!n.failed) {
-		System.out.println("\nenter event date: (example 1/1/2024)");
-		date=scan.next();
-		n.setDate(date);
-		
-		System.out.println("enter venue number:");
-		n.setVenue(app.venues.get(scan.nextInt()),date);
-		}
-		
-		
-		System.out.println("enter event theme");
-		n.setTheme(scan.next());
-
-		System.out.println("enter event description");
-		n.setDescription(scan.next());
-		
-		System.out.println("enter attendee count");
-		n.setAttendee_count(scan.nextInt());
-		
-		events.add(n);
-	}
 	public boolean checkPass(String username,String pass) {
 		
 		for(int i=0;i<Admins.size();i++) {

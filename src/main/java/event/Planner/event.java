@@ -51,13 +51,8 @@ public class event {
 		Date = "1/1/2024";
 		Theme = "000";
 		Description = "000";
-//		provider = null;
 		Attendee_count = 0;
 	}
-//	public void setProvider(Provider n)
-//	{
-//		provider =n;
-//	};
 	public void setID(String n)
 	{
 		ID =n;
@@ -139,11 +134,9 @@ public class event {
 	}
 	public void setGuestlistTest(String[] guests)
 	{
-		//String Guestname;
-		//Scanner input = new Scanner(System.in);
+		
 		System.out.println("enter guest names:");
 		for(int i=0;i<guests.length;i++){
-			//Guestname= input.nextLine();
 			Guestlist.add(guests[i]);
 		}; 
 	}
@@ -163,80 +156,15 @@ public class event {
 	public ArrayList<String> getGuestlist() {
 		return Guestlist;
 	};
-	/*
-	public void manageEvent()//tring name,venue venue,String date,String theme,String description,int attendee_count
-	{   Scanner scan = new Scanner (System.in);
+	
+	public void manageEventTest(int cases, String edit,int count){//tring name,venue venue,String date,String theme,String description,int attendee_count
 		System.out.println("choose what detail you want to change:");
 		System.out.println("1.name");
 		System.out.println("2.date");
 		System.out.println("3.theme");
 		System.out.println("4.description");
 		System.out.println("5.attendee count");
-		int cases= scan.nextInt();
-		String edit;
-		final String succcessfull = "change successful!";
-		switch(cases)
-		{
-		case 1:
-		{
-			System.out.println("enter new name:");
-			Name=scan.next();
-			System.out.println(succcessfull);
-			break;
-		}
-		case 2:
-		{
-			System.out.println("enter new date:");
-			edit=scan.next();
-			if(Venue.checkIfDateIsBooked(edit))
-			{
-				System.out.println("that date is booked");
-			}
-			else {Date=edit;
-			System.out.println(succcessfull);
-			}
-			break;
-		}
-		case 3:
-		{
-			System.out.println("enter new theme:");
-			Theme=scan.next();
-			System.out.println(succcessfull);
-			break;
-		}
-		case 4:
-		{
-			System.out.println("enter new description:");
-			Description=scan.next();
-			System.out.println(succcessfull);
-			break;
-		}
-		case 5:
-		{
-			System.out.println("enter new attendee count:");
-			Attendee_count=scan.nextInt();
-			System.out.println(succcessfull);
-			break;
-		}
-		default:{
-			System.out.println("\nTry again please.\n");
-			manageEvent();
-			break;
-		}
-		}
 		
-	}
-	*/
-	public void manageEventTest(int cases, String edit,int count)//tring name,venue venue,String date,String theme,String description,int attendee_count
-	{   //Scanner scan = new Scanner (System.in);
-		System.out.println("choose what detail you want to change:");
-		System.out.println("1.name");
-		System.out.println("2.date");
-		System.out.println("3.theme");
-		System.out.println("4.description");
-		System.out.println("5.attendee count");
-		//int cases= scan.nextInt();
-		//String edit;
 		final String successfull = "change successful!";
 		switch(cases)
 		{
