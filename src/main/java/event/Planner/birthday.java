@@ -54,7 +54,7 @@ public class birthday extends event {
 		Cake=n;
 	}
 	
-	/*@Override
+	@Override
 	public void manageEvent()
 	{
 		Scanner scan = new Scanner (System.in);
@@ -143,7 +143,7 @@ public class birthday extends event {
 			break;
 		}
 		}
-	}*/
+	}
 	public void manageEventTest(int cases,String edit,int count)
 	{
 		logger.info("choose what detail you want to change:\n");
