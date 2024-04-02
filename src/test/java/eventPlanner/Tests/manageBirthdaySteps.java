@@ -19,6 +19,109 @@ public class manageBirthdaySteps {
 		app = dataBase.createApp();
 		
 	}
+	@Given("Provider chooses to change nameb")
+	public void ProviderChoosesToChangeNameb() {
+		cases =1;		
+	}
+	@Given("Provider enters new name to replace old nameb")
+	public void ProviderEntersNewNameToReplaceOldNameb() {
+	    // Write code here that turns the phrase above into concrete actions
+		//throw new io.cucumber.java.PendingException();
+		edit="new data";
+	}
+	@Then("Provider changes name successfullyb")
+	public void ProviderChangesNameSuccessfullyb() {
+	    // Write code here that turns the phrase above into concrete actions
+		//throw new io.cucumber.java.PendingException();
+		e.manageEventTest(cases, edit,count);
+	}
+	
+	//Scenario 2  
+	@Given("Provider chooses to change Dateb")
+	public void ProviderChoosesToChangeDateb() {
+		cases =2;		
+	}
+	@Given("Provider enters new unbooked Date to replace old Dateb")
+	public void ProviderEntersNewUnbookedDateToReplaceOldDateb() {
+	    // Write code here that turns the phrase above into concrete actions
+		//throw new io.cucumber.java.PendingException();
+		edit="unbookeddate";
+	}
+	@Then("Provider changes Date successfullyb")
+	public void ProviderChangesDateSuccessfullyb() {
+	    // Write code here that turns the phrase above into concrete actions
+		//throw new io.cucumber.java.PendingException();
+		e.manageEventTest(cases, edit,count);
+	}
+
+	//Scenario 3
+		@Given("Provider enters new booked Date to replace old Dateb")
+		public void ProviderEntersNewDateToReplaceOldDateb() {
+		    // Write code here that turns the phrase above into concrete actions
+			//throw new io.cucumber.java.PendingException();
+			edit="1/2/2024";
+		}
+		@Then("Provider doesnt changes Dateb")
+		public void ProviderDoesntChangesDateb() {
+		    // Write code here that turns the phrase above into concrete actions
+			//throw new io.cucumber.java.PendingException();
+			e.manageEventTest(cases, edit,count);
+		}
+		
+		//Scenario 5
+		@Given("Provider chooses to change descriptionb")
+		public void ProviderChoosesToChangeDescriptionb() {
+			cases =4;		
+		}
+		@Given("Provider enters new description to replace old descriptionb")
+		public void ProviderEntersNewDescriptionToReplaceOldDescription() {
+		    // Write code here that turns the phrase above into concrete actions
+			//throw new io.cucumber.java.PendingException();
+			edit="new data";
+		}
+		@Then("Provider changes description successfullyb")
+		public void ProviderChangesDescriptionSuccessfullyb() {
+		    // Write code here that turns the phrase above into concrete actions
+			//throw new io.cucumber.java.PendingException();
+			e.manageEventTest(cases, edit,count);
+		}
+		
+		//Scenario 6
+				@Given("Provider chooses to change attendee countb")
+				public void ProviderChoosesToChangeAttendeeCountb() {
+					cases =5;		
+				}
+				@Given("Provider enters new attendee count to replace old attendee countb")
+				public void ProviderEntersNewAttendeeCountToReplaceOldAttendeeCountb() {
+				    // Write code here that turns the phrase above into concrete actions
+					//throw new io.cucumber.java.PendingException();
+					count=10;
+				}
+				@Then("Provider changes attendee count successfullyb")
+				public void ProviderChangesAttendeeCountSuccessfullyb() {
+				    // Write code here that turns the phrase above into concrete actions
+					//throw new io.cucumber.java.PendingException();
+					e.manageEventTest(cases, edit,count);
+				}
+
+     
+				//Scenario 4
+				@Given("Provider chooses to change themeb")
+				public void ProviderChoosesToChangeThemeb() {
+					cases =3;		
+				}
+				@Given("Provider enters new theme to replace old themeb")
+				public void ProviderEntersNewThemeToReplaceOldThemeb() {
+				    // Write code here that turns the phrase above into concrete actions
+					//throw new io.cucumber.java.PendingException();
+					edit="new data";
+				}
+				@Then("Provider changes theme successfullyb")
+				public void ProviderChangesThemeSuccessfullyb() {
+				    // Write code here that turns the phrase above into concrete actions
+					//throw new io.cucumber.java.PendingException();
+					e.manageEventTest(cases, edit,count);
+				}
 	@Given("Provider chooses to change age")
 	public void provider_chooses_to_change_age() {
 	    // Write code here that turns the phrase above into concrete actions
