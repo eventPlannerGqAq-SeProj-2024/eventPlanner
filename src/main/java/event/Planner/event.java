@@ -126,10 +126,6 @@ public class event {
 	{
 		return Attendee_count;
 	};
-//	public Provider getProvider()
-//	{
-//		return provider;
-//	};
 
 	public void setGuestlist()
 	{
@@ -173,6 +169,7 @@ public class event {
 			System.out.println("enter new name:");
 			Name=scan.next();
 			System.out.println("change successful!");
+			break;
 		}
 		case 2:
 		{
@@ -185,24 +182,33 @@ public class event {
 			else {Date=edit;
 			System.out.println("change successful!");
 			}
+			break;
 		}
 		case 3:
 		{
 			System.out.println("enter new theme:");
 			Theme=scan.next();
 			System.out.println("change successful!");
+			break;
 		}
 		case 4:
 		{
 			System.out.println("enter new description:");
 			Description=scan.next();
 			System.out.println("change successful!");
+			break;
 		}
 		case 5:
 		{
 			System.out.println("enter new attendee count:");
 			Attendee_count=scan.nextInt();
 			System.out.println("change successful!");
+			break;
+		}
+		default:{
+			System.out.println("\nTry again please.\n");
+			manageEvent();
+			break;
 		}
 		}
 		
