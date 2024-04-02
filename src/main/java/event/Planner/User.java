@@ -31,7 +31,7 @@ public class User {
 		name = n;
 		email = e;
 		bday = b;
-		gender = 'g';
+		gender = g;
 		isLogged = l;
 	}
 	
@@ -94,9 +94,10 @@ public class User {
 	public boolean isValidEmail(String e) {
 		e = e.toLowerCase();
 		if(!e.isEmpty() && e.length() >= 15) {
-			if(e.contains("@") && e.contains(".com"))return true;
+			if(e.contains("@") && e.contains(".com")) {
+				return true;
+			}
 		}
-		
 		return false;
 	}	
 	
@@ -105,7 +106,7 @@ public class User {
 		
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		try {
-			LocalDate date = LocalDate.parse(d, formatter);
+			LocalDate.parse(d, formatter);
 			return true;
 		}catch(DateTimeParseException e) {
 			return false;

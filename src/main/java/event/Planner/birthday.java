@@ -2,7 +2,10 @@ package event.Planner;
 
 import java.util.Scanner;
 
+import io.cucumber.core.logging.Logger;
+
 public class birthday extends event {
+	//Logger logger = 
 	
 	private int Age;
 	private String Cake,Celibrant_name;
@@ -52,10 +55,11 @@ public class birthday extends event {
 		Cake=n;
 	}
 	
-	
+	@Override
 	public void manageEvent()
 	{
 		Scanner scan = new Scanner (System.in);
+		//Logger logger = Logger.getLogger(getClass().getName());
 		System.out.println("choose what detail you want to change:");
 		System.out.println("1.name");
 		System.out.println("2.date");
