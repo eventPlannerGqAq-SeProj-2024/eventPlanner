@@ -15,6 +15,5 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 				 tags = "")//Use this to change what scenarios you want to test, make the string empty to test all scenarios
 
 public class AcceptanceTest {
-	
-	
+		
 }
