@@ -21,7 +21,7 @@ public class dataBase {
 	public static dataBase app;
 	boolean done = false;
 	
-	public static char whoLogged = '\0';
+	public char whoLogged = '\0';
 	
 	public static dataBase createApp() {
 		if(app == null)app = new dataBase();

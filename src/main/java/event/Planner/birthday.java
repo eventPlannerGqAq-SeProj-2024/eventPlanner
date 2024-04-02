@@ -86,9 +86,9 @@ public class birthday extends event {
 				System.out.println("that date is booked");
 			}
 			else {super.setDate(edit);
+			}
 			System.out.println(successful);
 			break;
-			}
 		}
 		case 3:
 		{
@@ -154,13 +154,15 @@ public class birthday extends event {
 		System.out.println("8.Celibrant name");
 		
 	//	String edit;
+		final String successful = "change successful!";
 		switch(cases)
 		{
 		case 1:
 		{
 			System.out.println("enter new name:");
 			super.setName(edit);
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 2:
 		{
@@ -171,44 +173,57 @@ public class birthday extends event {
 				System.out.println("that date is booked");
 			}
 			else {super.setDate(edit);
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 			}
 		}
 		case 3:
 		{
 			System.out.println("enter new theme:");
 			super.setTheme(edit);
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 4:
 		{
 			System.out.println("enter new description:");
 			super.setDescription(edit);
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 5:
 		{
 			System.out.println("enter new attendee count:");
 			super.setAttendee_count(count);
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 6:
 		{
 			System.out.println("enter new age:");
 			Age =count;
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 7:
 		{
 			System.out.println("enter new Cake:");
 			Cake=edit;
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 8:
 		{
 			System.out.println("enter new Celibrant name:");
 			Celibrant_name=edit;
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
+		}
+		default:
+		{
+			System.out.println("\nPlease try again\n");
+			manageEvent();
+			break;
 		}
 		}
 	}
