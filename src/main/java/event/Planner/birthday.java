@@ -176,8 +176,8 @@ public class birthday extends event {
 			}
 			else {super.setDate(edit);
 			System.out.println(successful);
-			break;
 			}
+			break;
 		}
 		case 3:
 		{
