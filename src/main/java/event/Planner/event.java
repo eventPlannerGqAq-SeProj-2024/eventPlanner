@@ -230,6 +230,7 @@ public class event {
 			System.out.println("enter new name:");
 			Name=edit;
 			System.out.println("change successful!");
+			break;
 		}
 		case 2:
 		{
@@ -241,24 +242,34 @@ public class event {
 			else {Date=edit;
 			System.out.println("change successful!");
 			}
+			break;
 		}
 		case 3:
 		{
 			System.out.println("enter new theme:");
 			Theme=edit;
 			System.out.println("change successful!");
+			break;
 		}
 		case 4:
 		{
 			System.out.println("enter new description:");
 			Description=edit;
 			System.out.println("change successful!");
+			break;
 		}
 		case 5:
 		{
 			System.out.println("enter new attendee count:");
 			Attendee_count=count;
 			System.out.println("change successful!");
+			break;
+		}
+		default:
+		{
+			System.out.println("\nPlease try agian.\n");
+			manageEventTest(cases,edit,count);
+			break;
 		}
 		}
 		
