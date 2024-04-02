@@ -54,10 +54,10 @@ public class birthday extends event {
 		Cake=n;
 	}
 	
-	@Override
-	public void manageEvent()
+	//@Override
+	public void manageEvent(Scanner scan)
 	{
-		Scanner scan = new Scanner (System.in);
+		//Scanner scan = new Scanner (System.in);
 		logger.info("choose what detail you want to change:\n");
 		logger.info("1.name\n");
 		logger.info("2.date\n");
