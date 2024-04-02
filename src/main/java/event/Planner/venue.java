@@ -8,7 +8,7 @@ public class venue {
   private Provider provider;
   private ArrayList<String> Amenities = new ArrayList<String>();
   private int Capacity =100, Price= 100,Area =1000;
-  private double Rating =0;
+  //private double Rating =0;
   private ArrayList<String> Booked = new ArrayList<String>();
   public venue(String i,String n,String l,int c,int a, int p,Provider pr)
   {
@@ -21,7 +21,7 @@ public class venue {
 	  Area =a;
 	  provider=pr;
   }
-  public venue(String n,String l,int c,int a, int p,Provider pr)
+  /*public venue(String n,String l,int c,int a, int p,Provider pr)
   {
 	  Name =n;
 	  location =l;
@@ -29,7 +29,7 @@ public class venue {
 	  Price =p;	
 	  Area =a;
 	  provider=pr;
-  }
+  }*/
   public venue()
   {
 	    ID = "000";
