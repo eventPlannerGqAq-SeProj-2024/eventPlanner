@@ -91,9 +91,29 @@ public class venue {
 	    	System.out.println("you dont have permission to edit this venue");
 	    }
   }
+  public void setAmenitiesTest(String provname,String[]  Amenity)
+  {
+	    if(provname.equals(provider.getName()))
+	    {
+	   // String Amenity;
+		//Scanner input = new Scanner(System.in);
+		System.out.println("enter Amenity names:(type 'done' to finish)");
+		int i=0;
+		while(true){
+			//Amenity= input.nextLine();
+			if(Amenity[i].equals("done"))
+				break;
+			Amenities.add(Amenity[i]);
+			i++;
+		}
+	    }
+	    else {
+	    	System.out.println("you dont have permission to edit this venue");
+	    }
+  }
   public void viewAmenities()
 	{
-	  System.out.println("{");
+	  System.out.printf("%s","{");
 		for(int i=Amenities.size();i>0;i--)
 		{	
 			 System.out.printf("%s",Amenities.get(i-1));
@@ -103,13 +123,14 @@ public class venue {
 				 System.out.printf(",");
 		 }
 	}
+  
   public void viewcalendar()
  	{
  	  System.out.println("Booked dates:");
  		for(int i=Booked.size();i>0;i--)
  		{	
  			 System.out.println(Booked.get(i-1));
- 		 }
+ 		}
  	}
   public ArrayList<String> getAmenities() {
 		return Amenities;
