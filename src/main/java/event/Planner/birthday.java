@@ -53,10 +53,6 @@ public class birthday extends event {
 	}
 	
 	
-	
-	
-	
-	
 	public void manageEvent()
 	{
 		Scanner scan = new Scanner (System.in);
@@ -70,6 +66,7 @@ public class birthday extends event {
 		System.out.println("7.Cake");
 		System.out.println("8.Celibrant name");
 		int cases= scan.nextInt();
+		final String successful = "change successful";
 		String edit;
 		switch(cases)
 		{
@@ -77,7 +74,8 @@ public class birthday extends event {
 		{
 			System.out.println("enter new name:");
 			super.setName(scan.next());
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 2:
 		{
@@ -88,44 +86,57 @@ public class birthday extends event {
 				System.out.println("that date is booked");
 			}
 			else {super.setDate(edit);
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 			}
 		}
 		case 3:
 		{
 			System.out.println("enter new theme:");
 			super.setTheme(scan.next());
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 4:
 		{
 			System.out.println("enter new description:");
 			super.setDescription(scan.next());
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 5:
 		{
 			System.out.println("enter new attendee count:");
 			super.setAttendee_count(scan.nextInt());
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 6:
 		{
 			System.out.println("enter new age:");
 			Age =scan.nextInt();
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 7:
 		{
 			System.out.println("enter new Cake:");
 			Cake=scan.next();
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 8:
 		{
 			System.out.println("enter new Celibrant name:");
 			Celibrant_name=scan.next();
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
+		}
+		default:
+		{
+			System.out.println("\nPlease try again\n");
+			manageEvent();
+			break;
 		}
 		}
 	}

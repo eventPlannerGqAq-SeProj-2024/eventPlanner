@@ -81,13 +81,15 @@ public class wedding extends event {
 		System.out.println("11.Groom");
 		int cases= scan.nextInt();
 		String edit;
+		final String successful = "change successful!";
 		switch(cases)
 		{
 		case 1:
 		{
 			System.out.println("enter new name:");
 			super.setName(scan.next());
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 2:
 		{
@@ -98,62 +100,78 @@ public class wedding extends event {
 				System.out.println("that date is booked");
 			}
 			else {super.setDate(edit);
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 			}
 		}
 		case 3:
 		{
 			System.out.println("enter new theme:");
 			super.setTheme(scan.next());
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 4:
 		{
 			System.out.println("enter new description:");
 			super.setDescription(scan.next());
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 5:
 		{
 			System.out.println("enter new attendee count:");
 			super.setAttendee_count(scan.nextInt());
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 6:
 		{
 			System.out.println("enter new Officiant:");
 			Officiant =scan.next();
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 7:
 		{
 			System.out.println("enter new Cake:");
 			Cake=scan.next();
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 8:
 		{
 			System.out.println("enter new Wedding type:");
 			Wedding_type=scan.next();
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 9:
 		{
 			System.out.println("enter new DJ:");
 			DJ=scan.next();
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 10:
 		{
 			System.out.println("enter new Bride:");
 			Bride=scan.next();
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 11:
 		{
 			System.out.println("enter new Groom:");
 			Groom=scan.next();
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
+		}
+		default:
+		{
+			System.out.println("\nPlease try agian\n");
+			manageEvent();
+			break;
 		}
 		}
 	}
@@ -174,13 +192,15 @@ public class wedding extends event {
 		System.out.println("11.Groom");
 		
 	//	String edit;
+		final String successful = "change successful!";
 		switch(cases)
 		{
 		case 1:
 		{
 			System.out.println("enter new name:");
 			super.setName(edit);
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 2:
 		{
@@ -191,62 +211,78 @@ public class wedding extends event {
 				System.out.println("that date is booked");
 			}
 			else {super.setDate(edit);
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 			}
 		}
 		case 3:
 		{
 			System.out.println("enter new theme:");
 			super.setTheme(edit);
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 4:
 		{
 			System.out.println("enter new description:");
 			super.setDescription(edit);
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 5:
 		{
 			System.out.println("enter new attendee count:");
 			super.setAttendee_count(count);
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 6:
 		{
 			System.out.println("enter new Officiant:");
 			Officiant =edit;
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 7:
 		{
 			System.out.println("enter new Cake:");
 			Cake=edit;
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 8:
 		{
 			System.out.println("enter new Wedding type:");
 			Wedding_type=edit;
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 9:
 		{
 			System.out.println("enter new DJ:");
 			DJ=edit;
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 10:
 		{
 			System.out.println("enter new Bride:");
 			Bride=edit;
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
 		}
 		case 11:
 		{
 			System.out.println("enter new Groom:");
 			Groom=edit;
-			System.out.println("change successful!");
+			System.out.println(successful);
+			break;
+		}
+		default:
+		{
+			System.out.println("\nPlease try agian\n");
+			manageEvent();
+			break;
 		}
 		}
 	}
