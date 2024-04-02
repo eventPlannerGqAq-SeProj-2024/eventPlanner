@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class dataBase {
-	private Scanner scan = new Scanner(System.in);
 	
 	public  ArrayList<Admin> Admins = new ArrayList<Admin>();
 	public  ArrayList<User> Users = new ArrayList<User>();
