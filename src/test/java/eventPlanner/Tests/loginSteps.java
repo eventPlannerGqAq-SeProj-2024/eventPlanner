@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.*;
 
 import event.Planner.dataBase;
-import event.Planner.eventPlannerApp;
+//import event.Planner.eventPlannerApp;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 

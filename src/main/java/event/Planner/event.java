@@ -126,10 +126,6 @@ public class event {
 	{
 		return Attendee_count;
 	};
-//	public Provider getProvider()
-//	{
-//		return provider;
-//	};
 
 	public void setGuestlist()
 	{
@@ -176,13 +172,15 @@ public class event {
 		System.out.println("5.attendee count");
 		int cases= scan.nextInt();
 		String edit;
+		final String succcessfull = "change successful!";
 		switch(cases)
 		{
 		case 1:
 		{
 			System.out.println("enter new name:");
 			Name=scan.next();
-			System.out.println("change successful!");
+			System.out.println(succcessfull);
+			break;
 		}
 		case 2:
 		{
@@ -193,26 +191,35 @@ public class event {
 				System.out.println("that date is booked");
 			}
 			else {Date=edit;
-			System.out.println("change successful!");
+			System.out.println(succcessfull);
 			}
+			break;
 		}
 		case 3:
 		{
 			System.out.println("enter new theme:");
 			Theme=scan.next();
-			System.out.println("change successful!");
+			System.out.println(succcessfull);
+			break;
 		}
 		case 4:
 		{
 			System.out.println("enter new description:");
 			Description=scan.next();
-			System.out.println("change successful!");
+			System.out.println(succcessfull);
+			break;
 		}
 		case 5:
 		{
 			System.out.println("enter new attendee count:");
 			Attendee_count=scan.nextInt();
-			System.out.println("change successful!");
+			System.out.println(succcessfull);
+			break;
+		}
+		default:{
+			System.out.println("\nTry again please.\n");
+			manageEvent();
+			break;
 		}
 		}
 		
@@ -227,13 +234,15 @@ public class event {
 		System.out.println("5.attendee count");
 		//int cases= scan.nextInt();
 		//String edit;
+		final String successfull = "change successful!";
 		switch(cases)
 		{
 		case 1:
 		{
 			System.out.println("enter new name:");
 			Name=edit;
-			System.out.println("change successful!");
+			System.out.println(successfull);
+			break;
 		}
 		case 2:
 		{
@@ -243,26 +252,36 @@ public class event {
 				System.out.println("that date is booked");
 			}
 			else {Date=edit;
-			System.out.println("change successful!");
+			System.out.println(successfull);
 			}
+			break;
 		}
 		case 3:
 		{
 			System.out.println("enter new theme:");
 			Theme=edit;
-			System.out.println("change successful!");
+			System.out.println(successfull);
+			break;
 		}
 		case 4:
 		{
 			System.out.println("enter new description:");
 			Description=edit;
-			System.out.println("change successful!");
+			System.out.println(successfull);
+			break;
 		}
 		case 5:
 		{
 			System.out.println("enter new attendee count:");
 			Attendee_count=count;
-			System.out.println("change successful!");
+			System.out.println(successfull);
+			break;
+		}
+		default:
+		{
+			System.out.println("\nPlease try agian.\n");
+			manageEventTest(cases,edit,count);
+			break;
 		}
 		}
 		

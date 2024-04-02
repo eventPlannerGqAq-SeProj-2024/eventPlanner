@@ -1,5 +1,10 @@
 package event.Planner;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
+
 public class User {
 	private String username;
 	private String password;
@@ -26,7 +31,7 @@ public class User {
 		name = n;
 		email = e;
 		bday = b;
-		gender = 'g';
+		gender = g;
 		isLogged = l;
 	}
 	
@@ -89,30 +94,23 @@ public class User {
 	public boolean isValidEmail(String e) {
 		e = e.toLowerCase();
 		if(!e.isEmpty() && e.length() >= 15) {
-			if(e.contains("@") && e.contains(".com"))return true;
+			if(e.contains("@") && e.contains(".com")) {
+				return true;
+			}
 		}
-		
 		return false;
-	}
+	}	
 	
 	public boolean isValidDate(String d) {
 		//Valid date is: dd/mm/yyyy , ex: 03/10/2024
 		
-		if(!d.isEmpty() && d.length() == 10) {
-			
-			if(d.charAt(0) >= '0' && d.charAt(0) <= '3') {
-				if((d.charAt(0) != '3' && d.charAt(1) >= '0'&& d.charAt(1) <= '9') || (d.charAt(0) == '3' && d.charAt(1) >= '0'&& d.charAt(1) <= '1')) {
-					
-					if(d.charAt(3) >= '0' && d.charAt(3) <= '1') {
-						if((d.charAt(3) != '1' && d.charAt(4) >= '0' && d.charAt(4) <= '9') || (d.charAt(3) == '1' && d.charAt(4) >= '0' && d.charAt(4) <= '2')) {
-							if(d.charAt(2) == '/' && d.charAt(5) == '/')return true;
-							}
-						}
-					}
-				}				
-			}
-		
-		return false;
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		try {
+			LocalDate.parse(d, formatter);
+			return true;
+		}catch(DateTimeParseException e) {
+			return false;
+		}
 	}	
 	
 }
