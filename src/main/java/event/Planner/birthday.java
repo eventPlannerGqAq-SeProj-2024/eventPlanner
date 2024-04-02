@@ -1,11 +1,10 @@
 package event.Planner;
 
 import java.util.Scanner;
-
-import io.cucumber.core.logging.Logger;
+import java.util.logging.*;
 
 public class birthday extends event {
-	//Logger logger = 
+	Logger logger = Logger.getLogger(getClass().getName());
 	
 	private int Age;
 	private String Cake,Celibrant_name;
@@ -59,16 +58,15 @@ public class birthday extends event {
 	public void manageEvent()
 	{
 		Scanner scan = new Scanner (System.in);
-		//Logger logger = Logger.getLogger(getClass().getName());
-		System.out.println("choose what detail you want to change:");
-		System.out.println("1.name");
-		System.out.println("2.date");
-		System.out.println("3.theme");
-		System.out.println("4.description");
-		System.out.println("5.attendee count");
-		System.out.println("6.Age");
-		System.out.println("7.Cake");
-		System.out.println("8.Celibrant name");
+		logger.info("choose what detail you want to change:\n");
+		logger.info("1.name\n");
+		logger.info("2.date\n");
+		logger.info("3.theme\n");
+		logger.info("4.description\n");
+		logger.info("5.attendee count\n");
+		logger.info("6.Age\n");
+		logger.info("7.Cake\n");
+		logger.info("8.Celibrant name\n");
 		int cases= scan.nextInt();
 		final String successful = "change successful";
 		String edit;
@@ -76,71 +74,71 @@ public class birthday extends event {
 		{
 		case 1:
 		{
-			System.out.println("enter new name:");
+			logger.info("enter new name:\n");
 			super.setName(scan.next());
-			System.out.println(successful);
+			logger.info(successful + "\n");
 			break;
 		}
 		case 2:
 		{
-			System.out.println("enter new date:");
+			logger.info("enter new date:\n");
 			edit=scan.next();
 			if(super.getVenue().checkIfDateIsBooked(edit))
 			{
-				System.out.println("that date is booked");
+				logger.info("that date is booked\n");
 			}
 			else {
 				super.setDate(edit);
-				System.out.println(successful);
+				logger.info(successful + "\n");
 			}
 			break;
 			
 		}
 		case 3:
 		{
-			System.out.println("enter new theme:");
+			logger.info("enter new theme:\n");
 			super.setTheme(scan.next());
-			System.out.println(successful);
+			logger.info(successful + "\n");
 			break;
 		}
 		case 4:
 		{
-			System.out.println("enter new description:");
+			logger.info("enter new description:\n");
 			super.setDescription(scan.next());
-			System.out.println(successful);
+			logger.info(successful + "\n");
 			break;
 		}
 		case 5:
 		{
-			System.out.println("enter new attendee count:");
+			logger.info("enter new attendee count:\n");
 			super.setAttendee_count(scan.nextInt());
-			System.out.println(successful);
+			logger.info(successful + "\n");
 			break;
 		}
 		case 6:
 		{
-			System.out.println("enter new age:");
+			logger.info("enter new age:\n");
 			Age =scan.nextInt();
-			System.out.println(successful);
+			logger.info(successful + "\n");
 			break;
 		}
 		case 7:
 		{
-			System.out.println("enter new Cake:");
+			logger.info("enter new Cake:\n");
 			Cake=scan.next();
-			System.out.println(successful);
+			logger.info(successful + "\n");
 			break;
 		}
 		case 8:
 		{
-			System.out.println("enter new Celibrant name:");
+			logger.info("enter new Celibrant name:\n");
 			Celibrant_name=scan.next();
-			System.out.println(successful);
+			logger.info(successful + "\n");
 			break;
 		}
 		default:
 		{
-			System.out.println("\nPlease try again\n");
+			logger.info("\nPlease try again\n\n");
 			manageEvent();
 			break;
 		}
@@ -148,16 +146,15 @@ public class birthday extends event {
 	}
 	public void manageEventTest(int cases,String edit,int count)
 	{
-	//	Scanner scan = new Scanner (System.in);
-		System.out.println("choose what detail you want to change:");
-		System.out.println("1.name");
-		System.out.println("2.date");
-		System.out.println("3.theme");
-		System.out.println("4.description");
-		System.out.println("5.attendee count");
-		System.out.println("6.Age");
-		System.out.println("7.Cake");
-		System.out.println("8.Celibrant name");
+		logger.info("choose what detail you want to change:\n");
+		logger.info("1.name\n");
+		logger.info("2.date\n");
+		logger.info("3.theme\n");
+		logger.info("4.description\n");
+		logger.info("5.attendee count\n");
+		logger.info("6.Age\n");
+		logger.info("7.Cake\n");
+		logger.info("8.Celibrant name\n");
 		
 	//	String edit;
 		final String successful = "change successful!";
@@ -165,69 +162,69 @@ public class birthday extends event {
 		{
 		case 1:
 		{
-			System.out.println("enter new name:");
+			logger.info("enter new name:\n");
 			super.setName(edit);
-			System.out.println(successful);
+			logger.info(successful + "\n");
 			break;
 		}
 		case 2:
 		{
-			System.out.println("enter new date:");
+			logger.info("enter new date:\n");
 			//edit=edit;
 			if(super.getVenue().checkIfDateIsBooked(edit))
 			{
-				System.out.println("that date is booked");
+				logger.info("that date is booked\n");
 			}
 			else {super.setDate(edit);
-			System.out.println(successful);
+			logger.info(successful + "\n");
 			}
 			break;
 		}
 		case 3:
 		{
-			System.out.println("enter new theme:");
+			logger.info("enter new theme:\n");
 			super.setTheme(edit);
-			System.out.println(successful);
+			logger.info(successful + "\n");
 			break;
 		}
 		case 4:
 		{
-			System.out.println("enter new description:");
+			logger.info("enter new description:\n");
 			super.setDescription(edit);
-			System.out.println(successful);
+			logger.info(successful + "\n");
 			break;
 		}
 		case 5:
 		{
-			System.out.println("enter new attendee count:");
+			logger.info("enter new attendee count:\n");
 			super.setAttendee_count(count);
-			System.out.println(successful);
+			logger.info(successful + "\n");
 			break;
 		}
 		case 6:
 		{
-			System.out.println("enter new age:");
+			logger.info("enter new age:\n");
 			Age =count;
-			System.out.println(successful);
+			logger.info(successful + "\n");
 			break;
 		}
 		case 7:
 		{
-			System.out.println("enter new Cake:");
+			logger.info("enter new Cake:\n");
 			Cake=edit;
-			System.out.println(successful);
+			logger.info(successful + "\n");
 			break;
 		}
 		case 8:
 		{
-			System.out.println("enter new Celibrant name:");
+			logger.info("enter new Celibrant name:\n");
 			Celibrant_name=edit;
-			System.out.println(successful);
+			logger.info(successful + "\n");
 			break;
 		}
 		default:
 		{
-			System.out.println("\nPlease try again\n");
+			logger.info("\nPlease try again\n\n");
 			manageEvent();
 			break;
 		}
