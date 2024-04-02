@@ -85,10 +85,12 @@ public class birthday extends event {
 			{
 				System.out.println("that date is booked");
 			}
-			else {super.setDate(edit);
+			else {
+				super.setDate(edit);
+				System.out.println(successful);
 			}
-			System.out.println(successful);
 			break;
+			
 		}
 		case 3:
 		{
