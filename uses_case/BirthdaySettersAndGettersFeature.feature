@@ -37,4 +37,19 @@ Feature: event setters and getters
     Given Attendee_count setter is used to change Attendee_count
     Then Attendee_count is changed
     And Attendee_count getter shows the new Attendee_count
+    
+     Scenario: Age setters and getters
+    Given Age setter is used to change Age
+    Then Age is changed
+    And Age getter shows the new Age
+    
+     Scenario: cake setters and getters
+    Given cake setter is used to change cake
+    Then cake is changed
+    And cake getter shows the new cake
+    
+     Scenario: Celibrant name setters and getters
+    Given Celibrant name setter is used to change Celibrant name
+    Then Celibrant name is changed
+    And Celibrant name getter shows the new Celibrant name
   

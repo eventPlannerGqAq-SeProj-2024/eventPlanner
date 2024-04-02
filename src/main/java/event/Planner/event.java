@@ -137,13 +137,23 @@ public class event {
 			Guestlist.add(Guestname);
 		}; 
 	}
+	public void setGuestlistTest(String[] guests)
+	{
+		//String Guestname;
+		//Scanner input = new Scanner(System.in);
+		System.out.println("enter guest names:");
+		for(int i=0;i<guests.length;i++){
+			//Guestname= input.nextLine();
+			Guestlist.add(guests[i]);
+		}; 
+	}
 	public void viewGuestlist()
 	{
 		System.out.printf("{");
-		for(int i=Attendee_count;i>0;i--)
+		for(int i=0;i<Guestlist.size();i++)
 		{	
-			 System.out.printf("%s",Guestlist.get(i-1));
-			 if(i-1==0)
+			 System.out.printf("%s",Guestlist.get(i));
+			 if(i+1==Guestlist.size())
 		         System.out.printf("}\n");
 			 else
 				 System.out.printf(",");
