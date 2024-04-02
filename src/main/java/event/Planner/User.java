@@ -25,16 +25,6 @@ public class User {
 		isLogged = false;		
 	}
 	
-	public User(String u,String p,String n, String e, String b, char g,boolean l) {
-		username = u;
-		password = p;
-		name = n;
-		email = e;
-		bday = b;
-		gender = g;
-		isLogged = l;
-	}
-	
 	public void setName(String n) {
 		name = n;
 	}
