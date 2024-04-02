@@ -181,6 +181,7 @@ public class venue {
   {
 	  return provider;
   }
+  /*
   public void addEvent()//String name,String date,String theme,String description,int attendee_count)
   {
 	  int attendee_count=1;
@@ -209,6 +210,7 @@ public class venue {
 	  new event(name,this,date,theme,description,attendee_count);
   	
   	}
+  */
   public void addEvent(String name,String date,String theme,String description,int attendee_count)
   {
 	   new event(name,this,date,theme,description,attendee_count);

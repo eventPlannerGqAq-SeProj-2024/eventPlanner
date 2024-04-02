@@ -49,3 +49,6 @@ Feature: Managing a birthday for a specific user by the provider
     And 	Provider enters new Celibrant name to replace old Celibrant name
     Then Provider changes Celibrant name successfully
     
+
+
+    

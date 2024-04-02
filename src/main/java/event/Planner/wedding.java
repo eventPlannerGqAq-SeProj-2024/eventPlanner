@@ -63,7 +63,7 @@ public class wedding extends event {
 	{
 		return Cake;
 	};
-	
+	/*
 	public void manageEvent()
 	{
 		Scanner scan = new Scanner (System.in);
@@ -175,6 +175,7 @@ public class wedding extends event {
 		}
 		}
 	}
+	*/
 	public void manageEventTest(int cases,String edit,int count)
 	{
 	//	Scanner scan = new Scanner (System.in);
@@ -281,7 +282,7 @@ public class wedding extends event {
 		default:
 		{
 			System.out.println("\nPlease try agian\n");
-			manageEvent();
+			//manageEvent();
 			break;
 		}
 		}
