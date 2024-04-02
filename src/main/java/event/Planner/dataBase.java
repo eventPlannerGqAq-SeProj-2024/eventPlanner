@@ -83,7 +83,7 @@ public class dataBase {
 			
 		}
 	}
-	
+	/*
 	public void userAddEvent()
 	{
 		int i=venues.size();
@@ -118,7 +118,7 @@ public class dataBase {
 		n.setAttendee_count(scan.nextInt());
 		
 		events.add(n);
-	}
+	}*/
 	public boolean checkPass(String username,String pass) {
 		
 		for(int i=0;i<Admins.size();i++) {
