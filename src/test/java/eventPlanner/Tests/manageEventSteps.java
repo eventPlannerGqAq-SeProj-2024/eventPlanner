@@ -8,7 +8,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class manageEventSteps {
-	dataBase app;
+	static dataBase app;
 	int cases,count=1;
 	String edit="";
 	Provider p= new Provider("user","pass","prov", "email", "1/1/2000",'m',true,"type");
