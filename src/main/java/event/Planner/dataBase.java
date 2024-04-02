@@ -206,7 +206,7 @@ public class dataBase {
 				d.add(app.Providers.get(i).getPass());
 			}	
 		}		
-		
+	
 		return d;
 	}
 	

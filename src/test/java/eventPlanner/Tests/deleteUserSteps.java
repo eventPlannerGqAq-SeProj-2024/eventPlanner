@@ -8,7 +8,7 @@ import io.cucumber.java.en.Then;
 
 public class deleteUserSteps {
 	dataBase app;
-	User u1;
+	User u1 = new User();
 	public deleteUserSteps() {
 		app = dataBase.createApp();
 		

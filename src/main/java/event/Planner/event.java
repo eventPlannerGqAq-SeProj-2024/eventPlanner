@@ -159,9 +159,11 @@ public class event {
 				 System.out.printf(",");
 		 }
 	}
+	
 	public ArrayList<String> getGuestlist() {
 		return Guestlist;
 	};
+	/*
 	public void manageEvent()//tring name,venue venue,String date,String theme,String description,int attendee_count
 	{   Scanner scan = new Scanner (System.in);
 		System.out.println("choose what detail you want to change:");
@@ -224,6 +226,7 @@ public class event {
 		}
 		
 	}
+	*/
 	public void manageEventTest(int cases, String edit,int count)//tring name,venue venue,String date,String theme,String description,int attendee_count
 	{   //Scanner scan = new Scanner (System.in);
 		System.out.println("choose what detail you want to change:");

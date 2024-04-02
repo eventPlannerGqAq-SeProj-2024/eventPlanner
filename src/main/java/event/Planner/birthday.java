@@ -54,7 +54,7 @@ public class birthday extends event {
 		Cake=n;
 	}
 	
-	@Override
+	//@Override
 	public void manageEvent()
 	{
 		Scanner scan = new Scanner (System.in);

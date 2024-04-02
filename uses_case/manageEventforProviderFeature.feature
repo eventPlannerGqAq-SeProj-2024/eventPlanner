@@ -34,3 +34,5 @@ Feature: Managing an event for a specific user by the provider
     And 	Provider enters new attendee count to replace old attendee count
     Then Provider changes attendee count successfully
     
+
+    

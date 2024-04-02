@@ -64,3 +64,5 @@ Feature: Managing an event for a specific user by the provider
     And 	Provider enters new groom to replace old groom
     Then Provider changes groom successfully
     
+ 
+    
