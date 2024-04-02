@@ -119,7 +119,7 @@ public class EventSettersAndGettersSteps {
 	public void id_getter_shows_the_new_id() {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
-		System.out.println(e.getDescription());
+		System.out.println(e.getID());
 	}
 
 	@Given("Venue setter is used to change Venue")

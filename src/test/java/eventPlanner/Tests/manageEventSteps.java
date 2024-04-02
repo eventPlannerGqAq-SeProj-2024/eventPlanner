@@ -91,7 +91,7 @@ public class manageEventSteps {
 		//Scenario 6
 				@Given("Provider chooses to change attendee count")
 				public void ProviderChoosesToChangeAttendeeCount() {
-					cases =3;		
+					cases =5;		
 				}
 				@Given("Provider enters new attendee count to replace old attendee count")
 				public void ProviderEntersNewAttendeeCountToReplaceOldAttendeeCount() {
