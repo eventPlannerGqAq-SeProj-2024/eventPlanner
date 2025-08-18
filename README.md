@@ -1,4 +1,2 @@
-Software engineering 2024 spring _ EventPlannerProject
-
-
-Ghassan Qasrawi - Adel Qadi
+# EventPlanner
+Software engineering course 2024 spring _ EventPlannerProject
